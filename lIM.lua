@@ -10009,7 +10009,8 @@ rtpa = 'مشرف'
 elseif da.status_.ID == "ChatMemberStatusMember" then 
 rtpa = 'عضو'
 end
-local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1) 
+local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1)
+local getbioY = getbio(msg.sender_user_id_)
 local nummsggp = tonumber(msg.id_/2097152/0.5)
 local nspatfa = tonumber(Msguser / nummsggp * 100)
 local Contact = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..msg.sender_user_id_) or 0) 
@@ -10044,7 +10045,8 @@ username = '@'..result.username_
 else
 username = 'لا يوجد '
 end
-get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
+get_id_text = get_id_text:gsub('#rdphoto',rdphoto)
+get_id_text = get_id_text:gsub('#bio',getbioY) 
 get_id_text = get_id_text:gsub('#id',iduser) 
 get_id_text = get_id_text:gsub('#username',username) 
 get_id_text = get_id_text:gsub('#msgs',Msguser) 
@@ -10072,7 +10074,7 @@ if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false 
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, amir.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n◈︙ايديك ⪼ '..msg.sender_user_id_..'\n◈︙معرفك ⪼ '..username..'\n◈︙رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙موقعك ⪼ '..rtpa..'\n◈︙تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙رسائلك ⪼ '..Msguser..'\n◈︙نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙السحكات ⪼ '..edit..'\n◈︙نقاطك ⪼ '..NUMPGAME..'\n')
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'[\n◈︙ايديك ⪼ '..msg.sender_user_id_..'\n◈︙معرفك ⪼ '..username..'\n◈︙رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙موقعك ⪼ '..rtpa..'\n◈︙تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙رسائلك ⪼ '..Msguser..'\n◈︙نسبه  تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙السحكات ⪼ '..edit..'\n◈︙نقاطك ⪼ '..NUMPGAME..']\n')
+send(msg.chat_id_, msg.id_,'[\n◈︙ايديك ⪼ '..msg.sender_user_id_..'\n◈︙معرفك ⪼ '..username..'\n◈︙رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙موقعك ⪼ '..rtpa..'\n◈︙تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙رسائلك ⪼ '..Msguser..'\n◈︙نسبه  تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙السحكات ⪼ '..edit..'\n◈︙نقاطك ⪼ '..NUMPGAME..']\n #bio')
 else
 send(msg.chat_id_, msg.id_, '\n◈︙الصوره ⪼ ليس لديك صور في حسابك'..'[\n◈︙ايديك ⪼ '..msg.sender_user_id_..'\n◈︙معرفك ⪼ '..username..'\n◈︙رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙موقعك ⪼ '..rtpa..'\n◈︙تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙رسائلك ⪼ '..Msguser..'\n◈︙نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙السحكات ⪼ '..edit..'\n◈︙نقاطك ⪼ '..NUMPGAME..']\n')
 end 
@@ -10081,7 +10083,8 @@ end
 else
 local get_id_text = database:get(bot_id.."KLISH:ID"..msg.chat_id_)
 if get_id_text then
-get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
+get_id_text = get_id_text:gsub('#rdphoto',rdphoto)
+get_id_text = get_id_text:gsub('#bio',getbioY) 
 get_id_text = get_id_text:gsub('#id',iduser) 
 get_id_text = get_id_text:gsub('#username',username) 
 get_id_text = get_id_text:gsub('#msgs',Msguser) 
