@@ -1120,8 +1120,8 @@ end
 
 if text == 'تحديث السورس •⊱' and DevlIMW(msg) then 
 os.execute('rm -rf lIM.lua')
-os.execute('wget https://raw.githubusercontent.com/lIMTEAM/lIM/master/lIM.lua')
-send(msg.chat_id_, msg.id_,' ◈︙تم تحديث السورس \n ◈︙لديك اخر اصدار لسورس ليم\n ◈︙الاصدار » { 6.7v}')
+os.execute('wget https://raw.githubusercontent.com/Source-lIM/lIM/master/lIM.lua')
+send(msg.chat_id_, msg.id_,' ◈︙تم تحديث السورس \n ◈︙لديك اخر اصدار لسورس ليم\n ◈︙الاصدار » { 2v}')
 dofile('lIM.lua')  
 end
 if text == 'تحديث المتجر •⊱' and DevlIMW(msg) then 
@@ -1129,8 +1129,8 @@ if text == 'تحديث المتجر •⊱' and DevlIMW(msg) then
   io.popen("cd File_Bot && rm -rf ga.lua.1") 
   io.popen("cd File_Bot && rm -rf ga.lua.2") 
   io.popen("cd File_Bot && rm -rf ga.lua.3") 
-  io.popen("cd File_Bot && wget https://raw.githubusercontent.com/lIMTEAM/Files_lIM/master/File_Bot/ga.lua")  
-  io.popen("cd File_Bot && wget https://raw.githubusercontent.com/lIMTEAM/Files_lIM/master/File_Bot/rd.lua") 
+  io.popen("cd File_Bot && wget https://raw.githubusercontent.com/Source-lIM/Files_lIM/master/File_Bot/ga.lua")  
+  io.popen("cd File_Bot && wget https://raw.githubusercontent.com/Source-lIM/Files_lIM/master/File_Bot/rd.lua") 
   send(msg.chat_id_, msg.id_,' ◈︙تم تحديث \n ◈︙لديك اخر اصدار للمتجر')
   dofile('lIM.lua')  
   end
@@ -9943,7 +9943,7 @@ local List = {
 └ 𝐈𝐃 𖤱 #id 𖦴 .
 ]],
 [[
-𓄼🇮🇶 𝑼𝒔𝒆𝒓??𝒂𝒎𝒆 :#username 
+𓄼🇮🇶 𝑼𝒔𝒆𝒓𝑵𝒂𝒎𝒆 :#username 
 𓄼🇮🇶 𝑺𝒕𝒂𝒔𝒕 :#stast 
 𓄼🇮🇶 𝒊𝒅 :#id 
 𓄼🇮🇶 𝑮𝒂𝒎𝒆𝑺 :#game 
@@ -11020,7 +11020,7 @@ if data.ID == "UpdateNewCallbackQuery" then
     ◈︙امر 
     ◈︙الاوامر المضافه
     •━━━━━━━━━━━━━━•ٴ
-𖡺 [𝙻𝙸𝙼 𝙲𝙷𝙰𝙽𝙽𝙴??](t.me/Source_lIM)➢
+𖡺 [𝙻𝙸𝙼 𝙲𝙷𝙰𝙽𝙽𝙴𝙻](t.me/Source_lIM)➢
   ]]
   keyboard = {} 
   keyboard.inline_keyboard = {
