@@ -11434,7 +11434,7 @@ if data.ID == "UpdateNewCallbackQuery" then
   keyboard = {} 
   keyboard.inline_keyboard = {
   {
-  {{text = '①', callback_data="/help1"},{text = '②', callback_data="/help2"},{text = '③', callback_data="/help3"},
+  {text = '①', callback_data="/help1"},{text = '②', callback_data="/help2"},{text = '③', callback_data="/help3"},
   },
   {
   {text = '④', callback_data="/help4"},{text = '⑤', callback_data="/help5"},
