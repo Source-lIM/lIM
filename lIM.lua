@@ -10010,7 +10010,6 @@ elseif da.status_.ID == "ChatMemberStatusMember" then
 rtpa = 'عضو'
 end
 local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1)
-local getbioY = getbio(msg.sender_user_id_)
 local nummsggp = tonumber(msg.id_/2097152/0.5)
 local nspatfa = tonumber(Msguser / nummsggp * 100)
 local Contact = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..msg.sender_user_id_) or 0) 
@@ -10046,7 +10045,6 @@ else
 username = 'لا يوجد '
 end
 get_id_text = get_id_text:gsub('#rdphoto',rdphoto)
-get_id_text = get_id_text:gsub('#bio',getbioY) 
 get_id_text = get_id_text:gsub('#id',iduser) 
 get_id_text = get_id_text:gsub('#username',username) 
 get_id_text = get_id_text:gsub('#msgs',Msguser) 
@@ -10084,7 +10082,6 @@ else
 local get_id_text = database:get(bot_id.."KLISH:ID"..msg.chat_id_)
 if get_id_text then
 get_id_text = get_id_text:gsub('#rdphoto',rdphoto)
-get_id_text = get_id_text:gsub('#bio',getbioY) 
 get_id_text = get_id_text:gsub('#id',iduser) 
 get_id_text = get_id_text:gsub('#username',username) 
 get_id_text = get_id_text:gsub('#msgs',Msguser) 
