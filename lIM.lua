@@ -106,7 +106,7 @@ echo -e "\e[36m"
 done
 ]])  
 file:close()  
-file = io.open("lM", "w")  
+file = io.open("LM", "w")  
 file:write([[
 #!/usr/bin/env bash
 cd $HOME/lIM
