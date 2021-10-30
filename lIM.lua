@@ -290,8 +290,6 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1330047630) then
 var = 'مبرمج السورس'
-if tonumber(user_id) == tonumber(966386003) then
-var = 'مبرمج السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."DEV:Sudo:T", user_id) then 
@@ -9945,7 +9943,7 @@ local List = {
 └ 𝐈𝐃 𖤱 #id 𖦴 .
 ]],
 [[
-𓄼🇮🇶 𝑼𝒔𝒆𝒓𝑵𝒂𝒎𝒆 :#username 
+𓄼🇮🇶 𝑼𝒔𝒆𝒓??𝒂𝒎𝒆 :#username 
 𓄼🇮🇶 𝑺𝒕𝒂𝒔𝒕 :#stast 
 𓄼🇮🇶 𝒊𝒅 :#id 
 𓄼🇮🇶 𝑮𝒂𝒎𝒆𝑺 :#game 
@@ -11022,7 +11020,7 @@ if data.ID == "UpdateNewCallbackQuery" then
     ◈︙امر 
     ◈︙الاوامر المضافه
     •━━━━━━━━━━━━━━•ٴ
-𖡺 [𝙻𝙸𝙼 𝙲𝙷𝙰𝙽𝙽𝙴𝙻](t.me/Source_lIM)➢
+𖡺 [𝙻𝙸𝙼 𝙲𝙷𝙰𝙽𝙽𝙴??](t.me/Source_lIM)➢
   ]]
   keyboard = {} 
   keyboard.inline_keyboard = {
