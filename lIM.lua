@@ -10508,7 +10508,11 @@ database:set(bot_id..'help10_text',text)
 return false
 end
 end
-
+if text and text:match('^بحث (.*)$') then 
+local TextSearch = text:match('^بحث (.*)$') 
+local msg_id = msg.id_/2097152/0.5
+local done = json:decode(https.request("https://mahmoudm50.xyz/download.php?token="..token.."&chat="..msg.chat_id_.."&rep="..msg_id.."&text="..URL.escape(TextSearch))) 
+end
 if text == 'استعاده الاوامر' and DevlIMW(msg) then
 database:del(bot_id..'help_text')
 database:del(bot_id..'help1_text')
@@ -10587,11 +10591,7 @@ send(msg.chat_id_, msg.id_, '◈︙الان يمكنك ارسال الكليشه
 database:set(bot_id..'help10'..msg.sender_user_id_,'true')
 return false 
 end
-if text and text:match('^بحث (.*)$') then 
-local TextSearch = text:match('^بحث (.*)$') 
-local msg_id = msg.id_/2097152/0.5
-local done = json:decode(https.request("https://mahmoudm50.xyz/download.php?token="..token.."&chat="..msg.chat_id_.."&rep="..msg_id.."&text="..URL.escape(TextSearch))) 
-end
+
 vardump(data)
 if Text and Text:match('yt@(.*)/m@(%d+)') then
 local Id_Link = {string.match(Text,"^yt@(.*)/m@(%d+)$")}
