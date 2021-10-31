@@ -1121,7 +1121,7 @@ end
 if text == 'تحديث السورس◈︙' and DevlIMW(msg) then 
 os.execute('rm -rf lIM.lua')
 os.execute('wget https://raw.githubusercontent.com/Source-lIM/lIM/master/lIM.lua')
-send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 2v}')
+send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 4v}')
 dofile('lIM.lua')  
 end
 if text == 'تحديث المتجر◈︙' and DevlIMW(msg) then 
@@ -1188,7 +1188,7 @@ t = t..""..k.."- ("..v..")\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مطورين"
+t = "◈︙مافيه مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -1204,7 +1204,7 @@ t = t..""..k.."- ("..v..")\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد محظورين عام"
+t = "◈︙مافيه محظورين عام"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -1221,7 +1221,7 @@ t = t..""..k.."- ("..v..")\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مكتومين عام"
+t = "◈︙مافيه مكتومين عام"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -1279,7 +1279,7 @@ sendok = sendok + 1
 end
 if #pv == i then 
 if sendok == 0 then
-send(msg.chat_id_, msg.id_,'◈︙لا يوجد مشتركين وهميين في البوت \n')   
+send(msg.chat_id_, msg.id_,'◈︙مافيه مشتركين وهميين في البوت \n')   
 else
 local ok = #pv - sendok
 send(msg.chat_id_, msg.id_,'◈︙عدد المشتركين الان » ( '..#pv..' )\n◈︙تم ازالة » ( '..sendok..' ) من المشتركين\n◈︙الان عدد المشتركين الحقيقي » ( '..ok..' ) مشترك \n')   
@@ -1325,7 +1325,7 @@ w = w + 1
 end
 if #group == i then 
 if (w + q) == 0 then
-send(msg.chat_id_, msg.id_,'◈︙لا يوجد كروبات وهميه في البوت\n')   
+send(msg.chat_id_, msg.id_,'◈︙مافيه كروبات وهميه في البوت\n')   
 else
 local lIM = (w + q)
 local sendok = #group - lIM
@@ -1370,7 +1370,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم ترقيته مطور'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -1419,7 +1419,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم نزلته من المطورين'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -1592,7 +1592,7 @@ ID = "SearchPublicChat",
 username_ = username  
 },function(arg,data) 
 if data and data.message_ and data.message_ == "USERNAME_NOT_OCCUPIED" then 
-send(msg.chat_id_, msg.id_, '◈︙المعرف لا يوجد فيه قناة')
+send(msg.chat_id_, msg.id_, '◈︙المعرف مافيه فيه قناة')
 return false  end
 if data and data.type_ and data.type_.ID and data.type_.ID == 'PrivateChatInfo' then
 send(msg.chat_id_, msg.id_, '◈︙عذا لا يمكنك وضع معرف حسابات في الاشتراك ')
@@ -1634,7 +1634,7 @@ else
 t = '\n• نورت حبي \n•  name \n• user' 
 end 
 t = t:gsub('name',result.first_name_) 
-t = t:gsub('user',('@'..result.username_ or 'لا يوجد')) 
+t = t:gsub('user',('@'..result.username_ or 'مافيه')) 
 send(msg.chat_id_, msg.id_,'['..t..']')
 end,nil) 
 end 
@@ -2235,7 +2235,7 @@ tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)
 if database:sismember(bot_id..'Chek:Groups',msg.chat_id_) then
 send(msg.chat_id_, msg.id_,'◈︙المجموعة مفعله من قبل يالطيب!')
 else
-sendText(msg.chat_id_,'\n◈︙بواسطه » ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n◈︙تم تفعيل الكروب {'..chat.title_..'}',msg.id_/2097152/0.5,'md')
+sendText(msg.chat_id_,'\n◈︙من » ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..') فعلت المجموعة \n ورفعت كل الادمنية\n{'..chat.title_..'}',msg.id_/2097152/0.5,'md')
 database:sadd(bot_id..'Chek:Groups',msg.chat_id_)
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
 local NameChat = chat.title_
@@ -2245,7 +2245,7 @@ local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token.
 if linkgpp.ok == true then 
 LinkGp = linkgpp.result
 else
-LinkGp = 'لا يوجد'
+LinkGp = 'مافيه'
 end
 Text = '◈︙تم تفعيل كروب جديده\n'..
 '\n◈︙بواسطة {'..Name..'}'..
@@ -2286,7 +2286,7 @@ local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token.
 if linkgpp.ok == true then 
 LinkGp = linkgpp.result
 else
-LinkGp = 'لا يوجد'
+LinkGp = 'مافيه'
 end
 Text = '\nتم عطلت الكروب ◈︙'..
 '\n◈︙بواسطة {'..Name..'}'..
@@ -2344,7 +2344,7 @@ local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token.
 if linkgpp.ok == true then 
 LinkGp = linkgpp.result
 else
-LinkGp = 'لا يوجد'
+LinkGp = 'مافيه'
 end
 Text = '◈︙تم تفعيل كروب جديده\n'..
 '\n◈︙بواسطة {'..Name..'}'..
@@ -2390,7 +2390,7 @@ return false
 end
 os.execute('rm -rf lIM.lua')
 os.execute('wget https://raw.githubusercontent.com/lIMTEAM/lIM/master/lIM.lua')
-send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 3v}')
+send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 4v}')
 dofile('lIM.lua')  
 end
 
@@ -2406,7 +2406,7 @@ return false
 end
 if text == "حذف رساله الاشتراك◈︙" and DevlIMW(msg) then  
 database:del(bot_id..'text:ch:user')
-send(msg.chat_id_, msg.id_, "◈︙تم مسح رساله الاشتراك ")
+send(msg.chat_id_, msg.id_, "◈︙تم مسحت رساله الاشتراك ")
 return false  
 end
 if text and text:match("^وضع قناة الاشتراك◈︙$") and DevlIMW(msg) then  
@@ -2435,7 +2435,7 @@ if database:get(bot_id..'add:ch:username') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, "◈︙تم تفعيل الاشتراك الاجباري \n◈︙على القناة » ["..addchusername.."]")
 else
-send(msg.chat_id_, msg.id_, "◈︙لا يوجد قناة في الاشتراك الاجباري ")
+send(msg.chat_id_, msg.id_, "◈︙مافيه قناة في الاشتراك الاجباري ")
 end
 return false  
 end
@@ -2473,7 +2473,7 @@ end
 
 if text == "مسح الاسماء المكتومه" and Constructor(msg) and database:get(bot_id.."block:name:stats"..msg.chat_id_) == "open" then
 database:del(bot_id.."lIM:blocname"..msg.chat_id_)
-texts = "◈︙تم مسح الاسماء المكتومه "
+texts = "◈︙تم مسحت الاسماء المكتومه "
 send(msg.chat_id_, msg.id_, texts)
 end
 if text == "الاسماء المكتومه" and Constructor(msg) and database:get(bot_id.."block:name:stats"..msg.chat_id_) == "open" then
@@ -2483,7 +2483,7 @@ for k,v in pairs(All_name) do
 t = t..""..k.."- (["..v.."])\n"
 end
 if #All_name == 0 then
-t = "◈︙لا يوجد اسماء مكتومه"
+t = "◈︙مافيه اسماء مكتومه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2526,7 +2526,7 @@ send(msg.chat_id_, msg.id_,'◈︙تم تعين  '..nump..' عدد الكتم')
 database:set(bot_id.."lIM:nump"..msg.chat_id_,nump)
 end
 if text == "التوحيد" then
-local s1 = database:get(bot_id.."lIM:teh"..msg.chat_id_) or "لا يوجد توحيد"
+local s1 = database:get(bot_id.."lIM:teh"..msg.chat_id_) or "مافيه توحيد"
 local s2 = database:get(bot_id.."lIM:nump"..msg.chat_id_) or 5
 send(msg.chat_id_, msg.id_,'◈︙التوحيد '..s1..'\n◈︙عدد الكتم  : '..s2)
 end
@@ -2736,7 +2736,7 @@ t = t..""..k..">> ("..v..") \n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد اوامر مضافه"
+t = "◈︙مافيه اوامر مضافه"
 end
 send(msg.chat_id_, msg.id_,'['..t..']')
 end
@@ -2748,6 +2748,23 @@ database:del(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..v)
 database:del(bot_id..'List:Cmd:Group:New'..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_,'◈︙تم ازالة جميع الاوامر المضافه')  
+end
+end
+if text == 'تفعيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
+database:del(bot_id..'searchinbot'..msg.chat_id_) 
+send(msg.chat_id_, msg.id_,' *✬︙تم تفعيل اليوتيوب*') 
+return false  
+end
+if text == 'تعطيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
+database:set(bot_id..'searchinbot'..msg.chat_id_,true) 
+send(msg.chat_id_, msg.id_,' *✬︙تم تعطيل اليوتيوب*') 
+return false  
+end
+if not database:get(bot_id..'searchinbot'..msg.chat_id_) then
+if text and text:match('^بحث (.*)$') then 
+local TextSearch = text:match('^بحث (.*)$') 
+local msg_id = msg.id_/2097152/0.5
+local done = json:decode(https.request("https://boyka-api.ml/Do/searchinbot.php?token="..token.."&chat_id="..msg.chat_id_.."&from="..msg.sender_user_id_.."&msg="..msg_id.."&Text="..TextSearch.."&n=s")) 
 end
 end
 if text == 'اضف امر' and Constructor(msg) then
@@ -3557,7 +3574,7 @@ send(msg.chat_id_, msg.id_, '◈︙تم تحديث جميع الملفات')
 end 
 if text == ("مسح قائمه العام") and DevlIMW(msg) then
 database:del(bot_id..'GBan:User')
-send(msg.chat_id_, msg.id_, '\n◈︙تم مسح قائمه العام')
+send(msg.chat_id_, msg.id_, '\n◈︙تم مسحت قائمه العام')
 return false
 end
 if text == ("قائمه العام") and DevlIMW(msg) then
@@ -3572,7 +3589,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد محظورين عام"
+t = "◈︙مافيه محظورين عام"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -3638,7 +3655,7 @@ status  = '\n◈︙تم حظره عام من الكروبات'
 texts = usertext..status
 database:sadd(bot_id..'GBan:User', result.id_)
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -3737,7 +3754,7 @@ status  = '\n◈︙تم كتمه عام من الكروبات'
 texts = usertext..status
 database:sadd(bot_id..'Gmute:User', result.id_)
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -3818,7 +3835,7 @@ texts = usertext..status
 database:srem(bot_id..'GBan:User', result.id_)
 database:srem(bot_id..'Gmute:User', result.id_)
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -3853,7 +3870,7 @@ end
 ------------------------------------------------------------------------
 if text == ("مسح المطورين") and DevlIMW(msg) then
 database:del(bot_id..'Sudo:User')
-send(msg.chat_id_, msg.id_, "\n◈︙تم مسح قائمة المطورين  ")
+send(msg.chat_id_, msg.id_, "\n◈︙تم مسحت قائمة المطورين  ")
 end
 if text == ("المطورين") and DevlIMW(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
@@ -3867,7 +3884,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مطورين"
+t = "◈︙مافيه مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -3968,7 +3985,7 @@ end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
 else
-send(msg.chat_id_, msg.id_,"◈︙لا يوجد اتصال من ال api \n") 
+send(msg.chat_id_, msg.id_,"◈︙مافيه اتصال من ال api \n") 
 end
 return false
 end
@@ -4018,7 +4035,7 @@ return false
 end
 if text == "مسح الملفات" and DevlIMW(msg) then
 os.execute("rm -fr File_Bot/*")
-send(msg.chat_id_,msg.id_,"◈︙تم مسح الملفات")
+send(msg.chat_id_,msg.id_,"◈︙تم مسحت الملفات")
 return false
 end
 
@@ -4065,7 +4082,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم ترقيته مطور'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4135,7 +4152,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم نزلته من المطورين'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4168,7 +4185,7 @@ return false
 end
 if text == ("مسح قائمه المالك") and Sudo(msg) then
 database:del(bot_id..'CoSu'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '\n◈︙تم مسح قائمه المالك')
+send(msg.chat_id_, msg.id_, '\n◈︙تم مسحت قائمه المالك')
 return false
 end
 
@@ -4184,7 +4201,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد احد في قائمه المالك"
+t = "◈︙مافيه احد في قائمه المالك"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -4201,7 +4218,7 @@ t = t..""..k.."- {"..v.."}\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد احد في قائمه المالك"
+t = "◈︙مافيه احد في قائمه المالك"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -4249,7 +4266,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم ترقيته مالك'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4319,7 +4336,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم نزلته من المالكين'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4353,7 +4370,7 @@ end
 ------------------------------------------------------------------------
 if text == ("مسح الاساسين") and CoSu(msg) then
 database:del(bot_id..'Basic:Constructor'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '\n◈︙تم مسح المنشئين الاساسين')
+send(msg.chat_id_, msg.id_, '\n◈︙تم مسحت المنشئين الاساسين')
 return false
 end
 if (msg.content_.sticker_)  and msg.reply_to_message_id_ == 0 and database:get(bot_id.."lock:Lock:Xn"..msg.chat_id_)=="del" then      
@@ -4456,7 +4473,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد منشئين اساسين"
+t = "◈︙مافيه منشئين اساسين"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -4473,7 +4490,7 @@ t = t..""..k.."- {"..v.."}\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد منشئين اساسين"
+t = "◈︙مافيه منشئين اساسين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -4521,7 +4538,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم ترقيته منشئ اساسي'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4591,7 +4608,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم نزلته من الاساسيين'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4625,7 +4642,7 @@ end
 ------------------------------------------------------------------------
 if text == 'مسح المنشئين' and BasicConstructor(msg) then
 database:del(bot_id..'Constructor'..msg.chat_id_)
-texts = '◈︙تم مسح المنشئين '
+texts = '◈︙تم مسحت المنشئين '
 send(msg.chat_id_, msg.id_, texts)
 end
 
@@ -4641,7 +4658,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد منشئين"
+t = "◈︙مافيه منشئين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -4657,7 +4674,7 @@ t = t..""..k.."- {"..v.."}\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد منشئين"
+t = "◈︙مافيه منشئين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -4721,7 +4738,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم ترقيته منشئ'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4790,7 +4807,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم نزلته من المنشئين'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4823,7 +4840,7 @@ end
 ------------------------------------------------------------------------
 if text == 'مسح المدراء' and Constructor(msg) then
 database:del(bot_id..'Manager'..msg.chat_id_)
-texts = '◈︙تم مسح المدراء '
+texts = '◈︙تم مسحت المدراء '
 send(msg.chat_id_, msg.id_, texts)
 end
 if text == ("المدراء") and Constructor(msg) then
@@ -4838,7 +4855,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مدراء"
+t = "◈︙مافيه مدراء"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -4854,7 +4871,7 @@ t = t..""..k.."- {"..v.."}\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مدراء"
+t = "◈︙مافيه مدراء"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -4901,7 +4918,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم ترقيته مدير'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4972,7 +4989,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم نزلته من المدراء'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5024,7 +5041,7 @@ database:srem(bot_id.."Mod:User"..msg.chat_id_, admins[i].user_id_)
 end
 end
 if num2 == 0 then
-send(msg.chat_id_, msg.id_,"◈︙لا يوجد ادمنيه ليتم رفعتهم") 
+send(msg.chat_id_, msg.id_,"◈︙مافيه ادمنيه ليتم رفعتهم") 
 else
 send(msg.chat_id_, msg.id_,"◈︙تمت ترقيه { "..num2.." } من الادمنيه") 
 end
@@ -5049,7 +5066,7 @@ end
 database:sadd(bot_id.."DEV:Sudo:T", result.id_)
 Reply_Status(msg,result.id_,"reply","◈︙تم ترقيته مطور ثانوي في البوت")  
 else
-send(msg.chat_id_, msg.id_,"◈︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"◈︙مافيه حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_lIM, nil)
@@ -5076,7 +5093,7 @@ if result.id_ then
 database:srem(bot_id.."DEV:Sudo:T", result.id_)
 Reply_Status(msg,result.id_,"reply","◈︙تم نزلته من المطور ثانويين")  
 else
-send(msg.chat_id_, msg.id_,"◈︙لا يوجد حساب بهذا المعرف")
+send(msg.chat_id_, msg.id_,"◈︙مافيه حساب بهذا المعرف")
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_lIM, nil)
@@ -5100,17 +5117,17 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مطورين ثانويين"
+t = "◈︙مافيه مطورين ثانويين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == ("مسح الثانويين") and SudoBot(msg) then
 database:del(bot_id.."DEV:Sudo:T")
-send(msg.chat_id_, msg.id_, "\n◈︙تم مسح قائمة المطورين الثانويين  ")
+send(msg.chat_id_, msg.id_, "\n◈︙تم مسحت قائمة المطورين الثانويين  ")
 end
 if text == 'مسح الادمنيه' and Manager(msg) then
 database:del(bot_id..'Mod:User'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '◈︙تم مسح الادمنيه')
+send(msg.chat_id_, msg.id_, '◈︙تم مسحت الادمنيه')
 end
 if text == ("الادمنيه") and Manager(msg) then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
@@ -5124,7 +5141,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد ادمنيه"
+t = "◈︙مافيه ادمنيه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5140,7 +5157,7 @@ t = t..""..k.."- {"..v.."}\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد ادمنيه"
+t = "◈︙مافيه ادمنيه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5195,7 +5212,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم ترقيته ادمن'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5269,7 +5286,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم نزلته من الادمنيه'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5390,7 +5407,7 @@ send(msg.chat_id_, msg.id_, texts)
 end,nil)   
 end
 else
-send(msg.chat_id_, msg.id_, '◈︙لا يوجد حساب بهذا المعرف')
+send(msg.chat_id_, msg.id_, '◈︙مافيه حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -5447,7 +5464,7 @@ end
 ------------------------------------------------------------------------
 if text == 'مسح المميزين' and Mod(msg) then
 database:del(bot_id..'Special:User'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '◈︙تم مسح المميزين')
+send(msg.chat_id_, msg.id_, '◈︙تم مسحت المميزين')
 end
 if text == ("المميزين") and Mod(msg) then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
@@ -5461,7 +5478,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مميزين"
+t = "◈︙مافيه مميزين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5477,7 +5494,7 @@ t = t..""..k.."- {"..v.."}\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مميزين"
+t = "◈︙مافيه مميزين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5532,7 +5549,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 local  statuss  = '\n◈︙تم ترقيته مميز'
 texts = usertext..statuss
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5608,7 +5625,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم نزلته من المميزين'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5642,7 +5659,7 @@ end
 ------------------------------------------------------------------------
 if text == 'تنزيل المطايه' and Mod(msg) then
 database:del(bot_id..'Mote:User'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '◈︙تم مسح جميع المطايه')
+send(msg.chat_id_, msg.id_, '◈︙تم مسحت جميع المطايه')
 end
 if text == ("تاك للمطايه") and Mod(msg) then
 local list = database:smembers(bot_id..'Mote:User'..msg.chat_id_)
@@ -5656,7 +5673,7 @@ t = t..""..k.."» المطي `"..v.."`\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مطايه"
+t = "◈︙مافيه مطايه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5711,7 +5728,7 @@ end
 -----------------------------------------------------
 if text == 'تنزيل الحاتات' and Mod(msg) then
 database:del(bot_id..'Mode:User'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '◈︙تم مسح جميع المطايه')
+send(msg.chat_id_, msg.id_, '◈︙تم مسحت جميع المطايه')
 end
 if text == ("تاك للحاتات") and Mod(msg) then
 local list = database:smembers(bot_id..'Mode:User'..msg.chat_id_)
@@ -5725,7 +5742,7 @@ t = t..""..k.."» الحاته `"..v.."`\n"
 end
 end
 if #list == 0 then
-t = "◈︙مع الاسف لا يوجد حاته"
+t = "◈︙مع الاسف مافيه حاته"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5791,7 +5808,7 @@ t = t..""..k.."» الحات `"..v.."`\n"
 end
 end
 if #list == 0 then
-t = "◈︙مع الاسف لا يوجد حات"
+t = "◈︙مع الاسف مافيه حات"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5860,7 +5877,7 @@ t = t..""..k.."» الصخل `"..v.."`\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد صخل"
+t = "◈︙مافيه صخل"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5930,7 +5947,7 @@ t = t..""..k.."» الجلب `"..v.."`\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد جلب"
+t = "◈︙مافيه جلب"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -5999,7 +6016,7 @@ t = t..""..k.."» القرد `"..v.."`\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد قرد"
+t = "◈︙مافيه قرد"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -6068,7 +6085,7 @@ t = t..""..k.."» الحصان `"..v.."`\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد حصان"
+t = "◈︙مافيه حصان"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -6137,7 +6154,7 @@ t = t..""..k.."» البقره "..v.."\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد البقره"
+t = "◈︙مافيه البقره"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -6206,7 +6223,7 @@ t = t..""..k.."» الطلي "..v.."\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد طلي"
+t = "◈︙مافيه طلي"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -6275,7 +6292,7 @@ t = t..""..k.."» الزاحف "..v.."\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد زاحف"
+t = "◈︙مافيه زاحف"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -6344,7 +6361,7 @@ t = t..""..k.."» الجريذي "..v.."\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد جريذي"
+t = "◈︙مافيه جريذي"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -6399,7 +6416,7 @@ end
 ---------------------------------------------
 if text == 'مسح المحظورين' and Mod(msg) then
 database:del(bot_id..'Ban:User'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '\n◈︙تم مسح المحظورين')
+send(msg.chat_id_, msg.id_, '\n◈︙تم مسحت المحظورين')
 end
 if text == ("المحظورين") then
 local list = database:smembers(bot_id..'Ban:User'..msg.chat_id_)
@@ -6413,7 +6430,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد محظورين"
+t = "◈︙مافيه محظورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -6495,7 +6512,7 @@ send(msg.chat_id_, msg.id_, texts)
 end,nil)   
 end
 else
-send(msg.chat_id_, msg.id_, '◈︙لا يوجد حساب بهذا المعرف')
+send(msg.chat_id_, msg.id_, '◈︙مافيه حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -6599,7 +6616,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم الغاء حظره'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -6639,7 +6656,7 @@ end
 ------------------------------------------------------------------------
 if text == 'مسح المكتومين' and Mod(msg) then
 database:del(bot_id..'Muted:User'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '◈︙تم مسح المكتومين')
+send(msg.chat_id_, msg.id_, '◈︙تم مسحت المكتومين')
 end
 if text == ("المكتومين") and Mod(msg) then
 local list = database:smembers(bot_id..'Muted:User'..msg.chat_id_)
@@ -6653,7 +6670,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد مكتومين"
+t = "◈︙مافيه مكتومين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -6726,7 +6743,7 @@ texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 end
 else
-send(msg.chat_id_, msg.id_, '◈︙لا يوجد حساب بهذا المعرف')
+send(msg.chat_id_, msg.id_, '◈︙مافيه حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -6894,7 +6911,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم الغاء كتمه'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -6988,7 +7005,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم تقيده'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -7141,7 +7158,7 @@ usertext = '\n◈︙العضو » ['..result.title_..'](t.me/'..(username or 'So
 status  = '\n◈︙تم الغاء تقيد'
 texts = usertext..status
 else
-texts = '◈︙لا يوجد حساب بهذا المعرف'
+texts = '◈︙مافيه حساب بهذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -7350,7 +7367,7 @@ texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=True&can_restrict_members=false&can_pin_messages=True&can_promote_members=false")
 else
-send(msg.chat_id_, msg.id_, '◈︙لا يوجد حساب بهذا المعرف')
+send(msg.chat_id_, msg.id_, '◈︙مافيه حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -7390,7 +7407,7 @@ texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
 else
-send(msg.chat_id_, msg.id_, '⚠¦ لا يوجد حساب بهذا المعرف')
+send(msg.chat_id_, msg.id_, '⚠¦ مافيه حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -7432,7 +7449,7 @@ texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=True&can_delete_messages=True&can_invite_users=True&can_restrict_members=True&can_pin_messages=True&can_promote_members=True")
 else
-send(msg.chat_id_, msg.id_, '◈︙لا يوجد حساب بهذا المعرف')
+send(msg.chat_id_, msg.id_, '◈︙مافيه حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -7472,7 +7489,7 @@ texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
 else
-send(msg.chat_id_, msg.id_, '◈︙لا يوجد حساب بهذا المعرف')
+send(msg.chat_id_, msg.id_, '◈︙مافيه حساب بهذا المعرف')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -7846,7 +7863,7 @@ end
 return false
 end
 if database:sismember(bot_id..'lock:pin',msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_,msg.id_,"◈︙عذرآ تم قفل التثبيت")  
+send(msg.chat_id_,msg.id_,"◈︙ياطيب مقفل التثبيت")  
 return false  
 end
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.reply_to_message_id_,disable_notification_ = 1},function(arg,data) 
@@ -7873,7 +7890,7 @@ end
 return false
 end
 if database:sismember(bot_id..'lock:pin',msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_,msg.id_,"◈︙عذرآ تم قفل الثبيت")  
+send(msg.chat_id_,msg.id_,"◈︙ياطيب مقفل الثبيت")  
 return false  
 end
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100','')},function(arg,data) 
@@ -7900,7 +7917,7 @@ end
 return false
 end
 if database:sismember(bot_id..'lock:pin',msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_,msg.id_,"◈︙عذرآ تم قفل الثبيت")  
+send(msg.chat_id_,msg.id_,"◈︙ياطيب مقفل الثبيت")  
 return false  
 end
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100','')},function(arg,data) 
@@ -7991,14 +8008,14 @@ return false
 end
 local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
 if link then                              
-send(msg.chat_id_,msg.id_,'𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  𖠐\n↫ ┄┄┄┄┄┄┄┄┄┄┄┄ ↬\n ['..link..']')                          
+send(msg.chat_id_,msg.id_,'𝙻𝙸𝙽𝙺 𝙶𝚁𝙾𝚄𝙿 𖠚\n↫ ┄┄┄┄┄┄┄┄┄┄┄┄ ↬\n ['..link..']')                          
 else                
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
 database:set(bot_id.."Private:Group:Link"..msg.chat_id_,linkgpp.result)
-linkgp = '𝒍𝒊𝒏𝒌 𝒈𝒓𝒐𝒖𝒑  ??\n↫ ┄┄┄┄┄┄┄┄┄┄┄┄ ↬\n ['..linkgpp.result..']'
+linkgp = '𝙻𝙸𝙽𝙺 𝙶𝚁𝙾𝚄𝙿 𖠚\n↫ ┄┄┄┄┄┄┄┄┄┄┄┄ ↬\n ['..linkgpp.result..']'
 else
-linkgp = ' ◈︙لا يوجد رابط ارسل ضع رابط'
+linkgp = ' ◈︙مافيه رابط ارسل ضع رابط'
 end  
 send(msg.chat_id_, msg.id_,linkgp)              
 end            
@@ -8014,7 +8031,7 @@ send(msg.chat_id_, msg.id_,'◈︙عذراً عـليك الاشـتࢪاك في
 end
 return false
 end
-send(msg.chat_id_,msg.id_,"◈︙تم مسح الرابط")           
+send(msg.chat_id_,msg.id_,"◈︙تم مسحت الرابط")           
 database:del(bot_id.."Private:Group:Link"..msg.chat_id_) 
 return false      
 end
@@ -8204,7 +8221,7 @@ database:del(bot_id.."lIM1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)
 database:del(bot_id.."lIM1:Add:Filter:Rp2"..v..msg.chat_id_)  
 database:srem(bot_id.."lIM1:List:Filter"..msg.chat_id_,v)  
 end  
-send(msg.chat_id_, msg.id_,"◈︙تم مسح قائمه المنع")  
+send(msg.chat_id_, msg.id_,"◈︙تم مسحت قائمه المنع")  
 end
 
 if text == "قائمه المنع" and Manager(msg) then   
@@ -8215,28 +8232,28 @@ local lIM_Msg = database:get(bot_id.."lIM1:Add:Filter:Rp2"..v..msg.chat_id_)
 t = t..""..k.."- "..v.." » {"..lIM_Msg.."}\n"    
 end  
 if #list == 0 then  
-t = "◈︙لا يوجد كلمات ممنوعه"  
+t = "◈︙مافيه كلمات ممنوعه"  
 end  
 send(msg.chat_id_, msg.id_,t)  
 end  
 
 if text == 'مسح قائمه منع المتحركات' and Manager(msg) then     
 database:del(bot_id.."filteranimation"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,'◈︙تم مسح قائمه منع المتحركات')  
+send(msg.chat_id_, msg.id_,'◈︙تم مسحت قائمه منع المتحركات')  
 end
 if text == 'مسح قائمه منع الصور' and Manager(msg) then     
 database:del(bot_id.."filterphoto"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,'◈︙تم مسح قائمه منع الصور')  
+send(msg.chat_id_, msg.id_,'◈︙تم مسحت قائمه منع الصور')  
 end
 if text == 'مسح قائمه منع الملصقات' and Manager(msg) then     
 database:del(bot_id.."filtersteckr"..msg.chat_id_)
-send(msg.chat_id_, msg.id_,'◈︙تم مسح قائمه منع الملصقات')  
+send(msg.chat_id_, msg.id_,'◈︙تم مسحت قائمه منع الملصقات')  
 end
 ------------------
 
 if text == 'مسح كليشه المطور' and DevlIMW(msg) then
 database:del(bot_id..'TEXT_SUDO')
-send(msg.chat_id_, msg.id_,'◈︙تم مسح كليشه المطور')
+send(msg.chat_id_, msg.id_,'◈︙تم مسحت كليشه المطور')
 end
 if text == 'ضع كليشه المطور' and DevlIMW(msg) then
 database:set(bot_id..'Set:TEXT_SUDO'..msg.chat_id_..':'..msg.sender_user_id_,true)
@@ -8502,7 +8519,7 @@ end
 return false
 end
 database:del(bot_id.."Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
-send(msg.chat_id_, msg.id_, "*◈︙تم مسح الصلاحيه *\n") 
+send(msg.chat_id_, msg.id_, "*◈︙تم مسحت الصلاحيه *\n") 
 end
 if database:get(bot_id.."Comd:New"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
@@ -8683,7 +8700,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},py_username,nil)
 end  
 end
 if text == "مسح رسايلي" or text == "مسح رسائلي" or text == "حذف رسايلي" or text == "حذف رسائلي" then  
-send(msg.chat_id_, msg.id_,'◈︙تم مسح رسائلك'  )  
+send(msg.chat_id_, msg.id_,'◈︙تم مسحت رسائلك'  )  
 database:del(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) 
 end
 if text == "رسايلي" or text == "رسائلي" or text == "msg" then 
@@ -9062,7 +9079,7 @@ database:del(bot_id.."Add:Rd:Sudo:File"..v)
 database:del(bot_id.."Add:Rd:Sudo:Audio"..v)
 database:del(bot_id..'List:Rd:Sudo')
 end
-send(msg.chat_id_, msg.id_,"◈︙تم مسح ردود المطور")
+send(msg.chat_id_, msg.id_,"◈︙تم مسحت ردود المطور")
 end
 
 if text == ("ردود المطور") and DevlIMW(msg) then 
@@ -9089,7 +9106,7 @@ end
 text = text..""..k.." >> ("..v..") » {"..db.."}\n"
 end
 if #list == 0 then
-text = "◈︙لا يوجد ردود للمطور"
+text = "◈︙مافيه ردود للمطور"
 end
 send(msg.chat_id_, msg.id_,'['..text..']')
 end
@@ -9248,7 +9265,7 @@ database:del(bot_id.."Add:Rd:Manager:File"..v..msg.chat_id_)
 database:del(bot_id.."Add:Rd:Manager:Audio"..v..msg.chat_id_)
 database:del(bot_id..'List:Manager'..msg.chat_id_)
 end
-send(msg.chat_id_, msg.id_,"◈︙تم مسح ردود المدير")
+send(msg.chat_id_, msg.id_,"◈︙تم مسحت ردود المدير")
 end
 
 if text == ("ردود المدير") and Manager(msg) then
@@ -9275,7 +9292,7 @@ end
 text = text..""..k..">> ("..v..") » {"..db.."}\n"
 end
 if #list == 0 then
-text = "◈︙لا يوجد ردود للمدير"
+text = "◈︙مافيه ردود للمدير"
 end
 send(msg.chat_id_, msg.id_,'['..text..']')
 end
@@ -9626,7 +9643,7 @@ local Contact = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..
 local NUMPGAME = tonumber(database:get(bot_id..'NUM:GAMES'..msg.chat_id_..result.sender_user_id_) or 0)
 local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..result.sender_user_id_) or 0)
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
-local username = ('[@'..data.username_..']' or 'لا يوجد')
+local username = ('[@'..data.username_..']' or 'مافيه')
 local iduser = result.sender_user_id_
 send(msg.chat_id_, msg.id_,'◈︙ايديه ~⪼ '..iduser..'\n◈︙معرفه ~⪼ '..username..'\n◈︙رتبته ~⪼ '..rtp..'\n◈︙تعديلاته ~⪼ '..edit..'\n◈︙نقاطه ~⪼ '..NUMPGAME..'\n◈︙جهاته ~⪼ '..Contact..'\n◈︙رسائله ~⪼ '..Msguser..'')
 end,nil)
@@ -9652,7 +9669,7 @@ local Contact = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..
 local NUMPGAME = tonumber(database:get(bot_id..'NUM:GAMES'..msg.chat_id_..result.id_) or 0)
 local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..result.id_) or 0)
 local rtp = Rutba(result.id_,msg.chat_id_)
-local username = ('[@'..data.username_..']' or 'لا يوجد')
+local username = ('[@'..data.username_..']' or 'مافيه')
 local iduser = result.id_
 send(msg.chat_id_, msg.id_,'◈︙ايديه ~⪼('..iduser..')\n◈︙معرفه ~⪼('..username..')\n◈︙رتبته ~⪼('..rtp..')\n◈︙تعديلاته ~⪼('..edit..')\n◈︙نقاطه ~⪼('..NUMPGAME..')\n◈︙جهاته ~⪼('..Contact..')\n◈︙رسائله ~⪼('..Msguser..')')
 end,nil)
@@ -9702,7 +9719,7 @@ function start_function(extra, result, success)
 if result.id_ then
 tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data) 
 local rtp = Rutba(result.id_,msg.chat_id_)
-local username = ('[@'..data.username_..']' or 'لا يوجد')
+local username = ('[@'..data.username_..']' or 'مافيه')
 local iduser = result.id_
 send(msg.chat_id_, msg.id_,'*- العضو » (*'..username..'*)\n- الرتبه » ('..rtp..')*\n')
 end,nil)
@@ -9716,7 +9733,7 @@ if text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
-local username = ('[@'..data.username_..']' or 'لا يوجد')
+local username = ('[@'..data.username_..']' or 'مافيه')
 local iduser = result.sender_user_id_
 send(msg.chat_id_, msg.id_,'◈︙الايدي » ('..iduser..')\n◈︙المعرف » ('..username..')\n◈︙الرتبه » ('..rtp..')\n◈︙نوع الكشف » بالرد')
 end,nil)
@@ -9730,7 +9747,7 @@ function start_function(extra, result, success)
 if result.id_ then
 tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data) 
 local rtp = Rutba(result.id_,msg.chat_id_)
-local username = ('[@'..data.username_..']' or 'لا يوجد')
+local username = ('[@'..data.username_..']' or 'مافيه')
 local iduser = result.id_
 send(msg.chat_id_, msg.id_,'◈︙الايدي » ('..iduser..')\n◈︙المعرف » ('..username..')\n◈︙الرتبه » ('..rtp..')\n◈︙نوع الكشف » بالمعرف')
 end,nil)
@@ -10018,7 +10035,7 @@ local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
 if result.username_ then
 username = '@'..result.username_ 
 else
-username = 'لا يوجد '
+username = 'مافيه '
 end
 local iduser = msg.sender_user_id_
 local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_) or 0)
@@ -10042,7 +10059,7 @@ if get_id_text then
 if result.username_ then
 username = '@'..result.username_ 
 else
-username = 'لا يوجد '
+username = 'مافيه '
 end
 get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
 get_id_text = get_id_text:gsub('#id',iduser) 
@@ -10066,7 +10083,7 @@ else
 if result.username_ then
 username = '@'..result.username_ 
 else
-username = 'لا يوجد '
+username = 'مافيه '
 end
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
 sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, amir.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..'\n')
@@ -10113,11 +10130,11 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == "مسح سحكاتي" or text == "حذف سحكاتي" then  
-send(msg.chat_id_, msg.id_,'◈︙تم مسح سحكاتك'  )  
+send(msg.chat_id_, msg.id_,'◈︙تم مسحت سحكاتك'  )  
 database:del(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_)
 end
 if text == "مسح جهاتي" or text == "حذف جهاتي" then  
-send(msg.chat_id_, msg.id_,'◈︙تم مسح جهاتك'  )  
+send(msg.chat_id_, msg.id_,'◈︙تم مسحت جهاتك'  )  
 database:del(bot_id..'Add:Contact'..msg.chat_id_..':'..msg.sender_user_id_)
 end
 if text == 'جهاتي' or text == 'شكد ضفت' then
@@ -10163,7 +10180,7 @@ sendok = sendok + 1
 end
 if #pv == i then 
 if sendok == 0 then
-send(msg.chat_id_, msg.id_,'◈︙لا يوجد مشتركين وهميين في البوت \n')   
+send(msg.chat_id_, msg.id_,'◈︙مافيه مشتركين وهميين في البوت \n')   
 else
 local ok = #pv - sendok
 send(msg.chat_id_, msg.id_,'◈︙عدد المشتركين الان » ( '..#pv..' )\n- تم ازالة » ( '..sendok..' ) من المشتركين\n- الان عدد المشتركين الحقيقي » ( '..ok..' ) مشترك \n')   
@@ -10209,7 +10226,7 @@ w = w + 1
 end
 if #group == i then 
 if (w + q) == 0 then
-send(msg.chat_id_, msg.id_,'◈︙لا يوجد كروبات وهميه في البوت\n')   
+send(msg.chat_id_, msg.id_,'◈︙مافيه كروبات وهميه في البوت\n')   
 else
 local lIM = (w + q)
 local sendok = #group - lIM
@@ -11511,7 +11528,7 @@ database:del(bot_id.."Set:Cmd:Group:New"..msg.chat_id_)
 database:srem(bot_id.."List:Cmd:Group:New"..msg.chat_id_,text)
 send(msg.chat_id_, msg.id_,'◈︙تم حذفت الامر')  
 else
-send(msg.chat_id_, msg.id_,'◈︙لا يوجد امر بهذا الاسم')  
+send(msg.chat_id_, msg.id_,'◈︙مافيه امر بهذا الاسم')  
 end
 database:del(bot_id.."Del:Cmd:Group"..msg.chat_id_..':'..msg.sender_user_id_)
 return false
@@ -11742,7 +11759,7 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "◈︙لا يوجد ادمن"
+t = "◈︙مافيه ادمن"
 end
 send(msg.chat_id_,0,''..t..'\n↫ ┄┄┄┄┄┄┄┄┄┄┄┄ ↬\n◈︙تم التعديل على الميديا\n◈︙الشخص الي قام بالتعديل\n◈︙ايدي الشخص ◂ '..result.sender_user_id_..'\n◈︙معرف الشخص»{ '..users..' }') 
 end,nil)
