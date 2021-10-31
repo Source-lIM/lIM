@@ -2750,23 +2750,6 @@ end
 send(msg.chat_id_, msg.id_,'◈︙تم ازالة جميع الاوامر المضافه')  
 end
 end
-if text == 'تفعيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
-database:del(bot_id..'searchinbot'..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,' *✬︙تم تفعيل اليوتيوب*') 
-return false  
-end
-if text == 'تعطيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
-database:set(bot_id..'searchinbot'..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,' *✬︙تم تعطيل اليوتيوب*') 
-return false  
-end
-if not database:get(bot_id..'searchinbot'..msg.chat_id_) then
-if text and text:match('^بحث (.*)$') then 
-local TextSearch = text:match('^بحث (.*)$') 
-local msg_id = msg.id_/2097152/0.5
-local done = json:decode(https.request("https://boyka-api.ml/Do/searchinbot.php?token="..token.."&chat_id="..msg.chat_id_.."&from="..msg.sender_user_id_.."&msg="..msg_id.."&Text="..TextSearch.."&n=s")) 
-end
-end
 if text == 'اضف امر' and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -10604,6 +10587,38 @@ send(msg.chat_id_, msg.id_, '◈︙الان يمكنك ارسال الكليشه
 database:set(bot_id..'help10'..msg.sender_user_id_,'true')
 return false 
 end
+if text and text:match('^بحث (.*)$') then 
+local TextSearch = text:match('^بحث (.*)$') 
+local msg_id = msg.id_/2097152/0.5
+local done = json:decode(https.request("https://mahmoudm50.xyz/download.php?token="..token.."&chat="..msg.chat_id_.."&rep="..msg_id.."&text="..URL.escape(TextSearch))) 
+end
+vardump(data)
+if Text and Text:match('yt@(.*)/m@(%d+)') then
+local Id_Link = {string.match(Text,"^yt@(.*)/m@(%d+)$")}
+tdcli_function ({ID = "GetUser",user_id_ = bot_id,},function(arg,data) 
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+local textt = '- من فضلك اختر نوع التنزيل'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'تنزيل صوت', callback_data="mp3/"..Id_Link[1].."/@m"..Id_Link[2]},
+},
+{
+{text = 'تنزيل فيديو', callback_data="mp4/"..Id_Link[1].."/@m"..Id_Link[2]},
+},
+}
+local msg_idd = Msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id='..Chat_id..'&text='..textt..'&reply_to_message_id='..Id_Link[2]..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end,nil) 
+elseif Text and Text:match('mp3/(.*)/@m(%d+)') then
+local kkp = {string.match(Text,"^mp3/(.*)/@m(%d+)$")}
+DeleteMessage(Chat_id,{[0] = Msg_id})    
+http.request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp3")
+elseif Text and Text:match('mp4/(.*)/@m(%d+)') then
+local kkp = {string.match(Text,"^mp4/(.*)/@m(%d+)$")}
+DeleteMessage(Chat_id,{[0] = Msg_id})    
+http.request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp4")
+end      
 -----------------------------------------------
 if text == 'الاوامر' then
   if not Mod(msg) then
@@ -11057,7 +11072,7 @@ if data.ID == "UpdateNewCallbackQuery" then
   {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
   },
   {
-    {text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝙸𝙼 ', url="t.me/Source_lIM"},
+    {text = '𝚂𝙾𝚄??𝙲𝙴 𝙻𝙸𝙼 ', url="t.me/Source_lIM"},
   },
   }
   return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
