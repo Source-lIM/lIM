@@ -2390,7 +2390,7 @@ return false
 end
 os.execute('rm -rf lIM.lua')
 os.execute('wget https://raw.githubusercontent.com/lIMTEAM/lIM/master/lIM.lua')
-send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 6.7v}')
+send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 2v}')
 dofile('lIM.lua')  
 end
 
