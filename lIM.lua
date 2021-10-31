@@ -2390,7 +2390,7 @@ return false
 end
 os.execute('rm -rf lIM.lua')
 os.execute('wget https://raw.githubusercontent.com/lIMTEAM/lIM/master/lIM.lua')
-send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 2v}')
+send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 3v}')
 dofile('lIM.lua')  
 end
 
@@ -9989,7 +9989,7 @@ local Text_Rand = List[math.random(#List)]
 database:set(bot_id.."KLISH:ID"..msg.chat_id_,Text_Rand)
 send(msg.chat_id_, msg.id_,'•⊱ ¦ تم تغير الايدي ارسل ايدي لرؤيته')
 end
-if text == ("اا") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) and GetChannelMember(msg) then   
+if text == ("ايدي") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then     
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -10036,7 +10036,7 @@ local amira = {
 " •⊱ ¦ بـبكن حـلك ",
 }
 local rdphoto = amira[math.random(#amira)]
-if not database:get(bot_id..'Bot:Id:Photo'..msg.chat_id_) then
+if not database:get(bot_id..'Bot:Id:Photo'..msg.chat_id_) then      
 local get_id_text = database:get(bot_id.."KLISH:ID"..msg.chat_id_)
 if get_id_text then
 if result.username_ then
@@ -10054,12 +10054,12 @@ get_id_text = get_id_text:gsub('#auto',interaction)
 get_id_text = get_id_text:gsub('#game',NUMPGAME) 
 get_id_text = get_id_text:gsub('#photos',photps) 
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then   
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, amir.photos_[0].sizes_[1].photo_.persistent_id_,get_id_text)
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, amir.photos_[0].sizes_[1].photo_.persistent_id_,get_id_text)       
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
 send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
 else
-send(msg.chat_id_, msg.id_, '\n •⊱ ¦ ليس لديك صور في حسابك \n['..get_id_text..']')  
+send(msg.chat_id_, msg.id_, '\n •⊱ ¦ ليس لديك صور في حسابك \n['..get_id_text..']')      
 end 
 end
 else
