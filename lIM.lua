@@ -10593,33 +10593,6 @@ local TextSearch = text:match('^بحث (.*)$')
 local msg_id = msg.id_/2097152/0.5
 local done = json:decode(https.request("https://mahmoudm50.xyz/download.php?token="..token.."&chat="..msg.chat_id_.."&rep="..msg_id.."&text="..URL.escape(TextSearch))) 
 end
-vardump(data)
-if Text and Text:match('yt@(.*)/m@(%d+)') then
-local Id_Link = {string.match(Text,"^yt@(.*)/m@(%d+)$")}
-tdcli_function ({ID = "GetUser",user_id_ = bot_id,},function(arg,data) 
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-local textt = '- من فضلك اختر نوع التنزيل'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'تنزيل صوت', callback_data="mp3/"..Id_Link[1].."/@m"..Id_Link[2]},
-},
-{
-{text = 'تنزيل فيديو', callback_data="mp4/"..Id_Link[1].."/@m"..Id_Link[2]},
-},
-}
-local msg_idd = Msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id='..Chat_id..'&text='..textt..'&reply_to_message_id='..Id_Link[2]..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end,nil) 
-elseif Text and Text:match('mp3/(.*)/@m(%d+)') then
-local kkp = {string.match(Text,"^mp3/(.*)/@m(%d+)$")}
-DeleteMessage(Chat_id,{[0] = Msg_id})    
-http.request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp3")
-elseif Text and Text:match('mp4/(.*)/@m(%d+)') then
-local kkp = {string.match(Text,"^mp4/(.*)/@m(%d+)$")}
-DeleteMessage(Chat_id,{[0] = Msg_id})    
-http.request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp4")
-end      
 if text == 'الاوامر' then
   if not Mod(msg) then
   send(msg.chat_id_, msg.id_,'◈︙هاذا الامر خاص بالادمنيه\n◈︙ارسل {م10} لعرض اوامر الاعضاء')
@@ -10832,6 +10805,33 @@ if data.channel_.status_.ID == "ChatMemberStatusKicked" then
 database:srem(bot_id..'Chek:Groups','-100'..data.channel_.id_)  
 end
 end
+vardump(data)
+if Text and Text:match('yt@(.*)/m@(%d+)') then
+local Id_Link = {string.match(Text,"^yt@(.*)/m@(%d+)$")}
+tdcli_function ({ID = "GetUser",user_id_ = bot_id,},function(arg,data) 
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+local textt = '- من فضلك اختر نوع التنزيل'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'تنزيل صوت', callback_data="mp3/"..Id_Link[1].."/@m"..Id_Link[2]},
+},
+{
+{text = 'تنزيل فيديو', callback_data="mp4/"..Id_Link[1].."/@m"..Id_Link[2]},
+},
+}
+local msg_idd = Msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id='..Chat_id..'&text='..textt..'&reply_to_message_id='..Id_Link[2]..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end,nil) 
+elseif Text and Text:match('mp3/(.*)/@m(%d+)') then
+local kkp = {string.match(Text,"^mp3/(.*)/@m(%d+)$")}
+DeleteMessage(Chat_id,{[0] = Msg_id})    
+http.request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp3")
+elseif Text and Text:match('mp4/(.*)/@m(%d+)') then
+local kkp = {string.match(Text,"^mp4/(.*)/@m(%d+)$")}
+DeleteMessage(Chat_id,{[0] = Msg_id})    
+http.request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp4")
+end      
 if data.ID == "UpdateNewCallbackQuery" then
   local Chat_id = data.chat_id_
   local Msg_id = data.message_id_
