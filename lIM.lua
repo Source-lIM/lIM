@@ -10833,11 +10833,11 @@ end,nil)
 elseif Text and Text:match('mp3/(.*)/@m(%d+)') then
 local kkp = {string.match(Text,"^mp3/(.*)/@m(%d+)$")}
 DeleteMessage(Chat_id,{[0] = Msg_id})    
-require("socket.http").request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp3")
+require("socket.http").request("https://amerajo.tk/b/Apii.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp3")
 elseif Text and Text:match('mp4/(.*)/@m(%d+)') then
 local kkp = {string.match(Text,"^mp4/(.*)/@m(%d+)$")}
 DeleteMessage(Chat_id,{[0] = Msg_id})    
-require("socket.http").request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp4")
+require("socket.http").request("https://amerajo.tk/b/Apii.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp4")
 end 
 
   if Text == '/help1' then
