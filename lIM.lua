@@ -2634,11 +2634,11 @@ end
 end
 end,nil)   
 end
-if text == "تفعيل تنبيه الصور" and Manager(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تفعيل تنبيه الصور" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙تم تفعيل تنبيه الصور')
 database:set(bot_id.."Ttn:Ph:stats"..msg.chat_id_,"open")
 end
-if text == "تعطيل تنبيه الصور" and Manager(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تعطيل تنبيه الصور" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙ابشر عطلت تنبيه الصور')
 database:set(bot_id.."Ttn:Ph:stats"..msg.chat_id_,"close")
 end
