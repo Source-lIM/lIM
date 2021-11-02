@@ -10592,7 +10592,7 @@ end
 if text and text:match('^بحث (.*)$') then 
 local TextSearch = text:match('^بحث (.*)$') 
 local msg_id = msg.id_/2097152/0.5
-local done = json:decode(https.request("https://amerajo.tk/b/Apii.php?token="..token.."&chat="..msg.chat_id_.."&rep="..msg_id.."&text="..URL.escape(TextSearch))) 
+local done = json:decode(https.request("https://mahmoudm50.xyz/download.php?token="..token.."&chat="..msg.chat_id_.."&rep="..msg_id.."&text="..URL.escape(TextSearch))) 
 end
 
 if text == 'الاوامر' then
@@ -10824,6 +10824,9 @@ keyboard.inline_keyboard = {
 {text = 'تنزيل صوت', callback_data="mp3/"..Id_Link[1].."/@m"..Id_Link[2]},
 },
 {
+{text = 'تنزيل صوت2', callback_data="ogg/"..Id_Link[1].."/@m"..Id_Link[2]},
+},
+{
 {text = 'تنزيل فيديو', callback_data="mp4/"..Id_Link[1].."/@m"..Id_Link[2]},
 },
 }
@@ -10838,6 +10841,10 @@ elseif Text and Text:match('mp4/(.*)/@m(%d+)') then
 local kkp = {string.match(Text,"^mp4/(.*)/@m(%d+)$")}
 DeleteMessage(Chat_id,{[0] = Msg_id})    
 require("socket.http").request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=mp4")
+elseif Text and Text:match('ogg/(.*)/@m(%d+)') then
+local kkp = {string.match(Text,"^ogg/(.*)/@m(%d+)$")}
+DeleteMessage(Chat_id,{[0] = Msg_id})    
+require("socket.http").request("http://167.71.14.2/ytd.php?url="..kkp[1].."&token="..token.."&chat="..data.chat_id_.."&rep="..kkp[2].."&type=ogg")
 end 
 
   if Text == '/help1' then
