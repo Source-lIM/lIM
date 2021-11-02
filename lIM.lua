@@ -2164,9 +2164,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.sticker_.set_id_ then
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
-send(msg.chat_id_,0, "◈︙عذرا » {[@"..data.username_.."]}\n◈︙عذرا ابشر منعت الملصق \n" ) 
+send(msg.chat_id_,0, "◈︙عذرا » {[@"..data.username_.."]}\n◈︙ياطيب منعت الملصق ماترسلها \n" ) 
 else
-send(msg.chat_id_,0, "◈︙عذرا » {["..data.first_name_.."](T.ME/Source_lIM)}\n◈︙عذرا ابشر منعت الملصق \n" ) 
+send(msg.chat_id_,0, "◈︙عذرا » {["..data.first_name_.."](T.ME/Source_lIM)}\n◈︙ياطيب منعت الملصق ماترسلها \n" ) 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -2184,9 +2184,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.photo_.id_ then
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
-send(msg.chat_id_,0,"◈︙عذرا » {[@"..data.username_.."]}\n◈︙عذرا ابشر منعت الصوره \n" ) 
+send(msg.chat_id_,0,"◈︙عذرا » {[@"..data.username_.."]}\n◈︙ياطيب منعت الصوره ماترسلها \n" ) 
 else
-send(msg.chat_id_,0,"◈︙عذرا » {["..data.first_name_.."](T.ME/Source_lIM)}\n◈︙عذرا ابشر منعت الصوره \n") 
+send(msg.chat_id_,0,"◈︙عذرا » {["..data.first_name_.."](T.ME/Source_lIM)}\n◈︙ياطيب منعت الصوره ماترسلها \n") 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -2201,9 +2201,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.animation_.animation_.persistent_id_ then
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
-send(msg.chat_id_,0,"◈︙عذرا » {[@"..data.username_.."]}\n◈︙عذرا ابشر منعت المتحركه \n") 
+send(msg.chat_id_,0,"◈︙عذرا » {[@"..data.username_.."]}\n◈︙ياطيب منعت المتحركه ماترسلها \n") 
 else
-send(msg.chat_id_,0,"◈︙عذرا » {["..data.first_name_.."](T.ME/Source_lIM)}\n◈︙عذرا ابشر منعت المتحركه \n" ) 
+send(msg.chat_id_,0,"◈︙عذرا » {["..data.first_name_.."](T.ME/Source_lIM)}\n◈︙ياطيب منعت المتحركه ماترسلها \n" ) 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -2489,11 +2489,11 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 end
-if text == "تفعيل كتم الاسم" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تفعيل كتم الاسم" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙تم التفعيل الاسماء المكتومه')
 database:set(bot_id.."block:name:stats"..msg.chat_id_,"open")
 end
-if text == "تعطيل كتم الاسم" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تعطيل كتم الاسم" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙ابشر عطلت الاسماء المكتومه')
 database:set(bot_id.."block:name:stats"..msg.chat_id_,"close")
 end
@@ -2532,11 +2532,11 @@ local s2 = database:get(bot_id.."lIM:nump"..msg.chat_id_) or 5
 send(msg.chat_id_, msg.id_,'◈︙التوحيد '..s1..'\n◈︙عدد الكتم  : '..s2)
 end
 end
-if text == "تفعيل التوحيد" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تفعيل التوحيد" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙تم تفعيل التوحيد')
 database:set(bot_id.."kt:twh:stats"..msg.chat_id_,"open")
 end
-if text == "تعطيل التوحيد" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تعطيل التوحيد" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙ابشر عطلت التوحيد')
 database:set(bot_id.."kt:twh:stats"..msg.chat_id_,"close")
 end
@@ -2562,11 +2562,11 @@ end
 bnnaGet(id, team_lIMa_new)
 end
 end
-if text == "تفعيل تنبيه الاسماء" and Manager(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تفعيل تنبيه الاسماء" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙تم تفعيل تنبيه الاسماء')
 database:set(bot_id.."Ttn:BBE:stats"..msg.chat_id_,"open")
 end
-if text == "تعطيل تنبيه الاسماء" and Manager(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تعطيل تنبيه الاسماء" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙ابشر عطلت تنبيه الاسماء')
 database:set(bot_id.."Ttn:BBE:stats"..msg.chat_id_,"close")
 end
@@ -2596,11 +2596,11 @@ end
 end
 end,nil)   
 end
-if text == "تفعيل تنبيه المعرف" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تفعيل تنبيه المعرف" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙تم تفعيل تنبيه المعرف')
 database:set(bot_id.."Ttn:Userr:stats"..msg.chat_id_,"open")
 end
-if text == "تعطيل تنبيه المعرف" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
+if text == "تعطيل تنبيه المعرف" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙ابشر عطلت تنبيه المعرف')
 database:set(bot_id.."Ttn:Userr:stats"..msg.chat_id_,"close")
 end
@@ -5025,7 +5025,7 @@ database:srem(bot_id.."Mod:User"..msg.chat_id_, admins[i].user_id_)
 end
 end
 if num2 == 0 then
-send(msg.chat_id_, msg.id_,"◈︙مافيه ادمنيه ليتم رفعتهم") 
+send(msg.chat_id_, msg.id_,"◈︙مافيه ادمنيه لرفعهم") 
 else
 send(msg.chat_id_, msg.id_,"◈︙تمت ترقيه { "..num2.." } من الادمنيه") 
 end
@@ -5170,7 +5170,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
-if text and text:match("^رف�� ادمن @(.*)$") and Manager(msg) then
+if text and text:match("^رفع ادمن @(.*)$") and Manager(msg) then
 local username = text:match("^رفع ادمن @(.*)$")
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -8838,10 +8838,13 @@ if text == ""..(database:get(bot_id..'Name:Bot') or 'ليم').."" then
 Namebot = (database:get(bot_id..'Name:Bot') or 'ليم')
 local lIM_Msg = {
 'عمغي 🥺💕.',
-'هاا شتريد كافي ☹️.',
-'مشايف بوت شني 😂.',
+'الله يرزقك حياة غير ليم',
+'لبيه.',
+'عيونها',
+'عيون ليم',
+'الله ياخذ ليم.',
 'كول حبيبي ؟ اني '..Namebot..'',
-'مشغول حالياً',
+'قول شعندك',
 'عمري فداك '..Namebot..' كول حب'
 }
 send(msg.chat_id_, msg.id_,'['..lIM_Msg[math.random(#lIM_Msg)]..']') 
@@ -9443,9 +9446,9 @@ database:srem(bot_id..'Chek:Groups',msg.chat_id_)
 end
 return false  
 end
-if text == 'بوت' then
+if text == 'بوت' or text == 'شسمك' or text == 'شوسمك' or text == 'شو اسمك' or text == 'شنو اسمك' or text == 'شنواسمك' or text == 'شنوسمك' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'ليم')
-send(msg.chat_id_, msg.id_,'اسمي ['..Namebot..'] ')
+send(msg.chat_id_, msg.id_,"اسمي * ['..Namebot..'] *")
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
