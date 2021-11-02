@@ -10589,7 +10589,15 @@ database:set(bot_id..'help10'..msg.sender_user_id_,'true')
 return false 
 end
 -----------------------------------------------
-if text and text:match('^بحث (.*)$') then 
+if text == "تعطيل اليوتيوب" and Manager(msg) then
+send(msg.chat_id_, msg.id_, '◈︙ابشر عطلت اليوتيوب')
+database:set(bot_id.." amir:you_Bots"..msg.chat_id_,"close")
+end
+if text == "تفعيل اليوتيوب" and Manager(msg) then
+send(msg.chat_id_, msg.id_,'◈︙تم تفعيل اليوتيوب')
+database:set(bot_id.." amir:you_Bots"..msg.chat_id_,"open")
+end
+if text and text:match('^بحث (.*)$') and database:get(bot_id.." amir:you_Bots"..msg.chat_id_) == "open" then 
 local TextSearch = text:match('^بحث (.*)$') 
 local msg_id = msg.id_/2097152/0.5
 local done = json:decode(https.request("https://mahmoudm50.xyz/download.php?token="..token.."&chat="..msg.chat_id_.."&rep="..msg_id.."&text="..URL.escape(TextSearch))) 
@@ -10817,17 +10825,17 @@ if Text and Text:match('yt@(.*)/m@(%d+)') then
 local Id_Link = {string.match(Text,"^yt@(.*)/m@(%d+)$")}
 tdcli_function ({ID = "GetUser",user_id_ = bot_id,},function(arg,data) 
 DeleteMessage(Chat_id,{[0] = Msg_id})  
-local textt = '- من فضلك اختر نوع التنزيل'
+local textt = '◈︙اختر صيغه التنزيل الان.'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'تنزيل صوت', callback_data="mp3/"..Id_Link[1].."/@m"..Id_Link[2]},
+{text = '◈︙مقطع فيديو.', callback_data="mp4/"..Id_Link[1].."/@m"..Id_Link[2]},
 },
 {
-{text = 'تنزيل صوت2', callback_data="ogg/"..Id_Link[1].."/@m"..Id_Link[2]},
+{text = '◈︙ملف صوتي.', callback_data="mp3/"..Id_Link[1].."/@m"..Id_Link[2]},{text = '◈︙بصمة صوتية.', callback_data="ogg/"..Id_Link[1].."/@m"..Id_Link[2]},
 },
 {
-{text = 'تنزيل فيديو', callback_data="mp4/"..Id_Link[1].."/@m"..Id_Link[2]},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝙸𝙼 ', url="t.me/Source_lIM"},
 },
 }
 local msg_idd = Msg_id/2097152/0.5
