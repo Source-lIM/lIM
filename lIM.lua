@@ -10648,9 +10648,6 @@ end
   {text = '⑨', callback_data="/help9"},{text = '⑩', callback_data="/help10"},
   },
   {
-    {text = 'إخفاء القائمة', callback_data="/delt"},
-    },
-  {
   {text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝙸𝙼 ', url="t.me/Source_lIM"},
   },
   }
@@ -10658,16 +10655,6 @@ end
   https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
   return false
   end
-  if Text == '/delt' then
-if not Mod(data) then
-local notText = '✘ عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-local hide = 'تم اخفاء الاوامر'
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(hide)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true') 
-end
   ----------------------------------------
 if text == "تعطيل الزخرفه" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '◈︙ابشر عطلت الزخرفه')
