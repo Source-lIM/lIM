@@ -2584,9 +2584,9 @@ end
 if data.first_name_ then 
 if lIMChengName ~= data.first_name_ then 
 local Text = {
-  "جان خوش اسم يول",
-"ليش غيرته اسمك بس لا خانوك/ج",
-"هذا الحلو غير اسمه 😉",
+  "ها شو صار معك وغيرت اسمك؟",
+"سرقت حد وغيرت اسمك؟",
+"اسمك حلو خليه",
 }
 send(msg.chat_id_, msg.id_,Text[math.random(#Text)])
 end  
@@ -2618,12 +2618,12 @@ end
 if data.username_ then 
 if lIMChengUserName ~= data.username_ then 
 local Text = {
-'ها ليش غيرت معرفك نشروك بقنوات؟ 🌚😹',
+'هاا عمري غيرت معرفك؟',
 "معرفك مش حلو ",
-"شسالفه شو غيرت معرفك 😐🌝",
-"غير معرفه خمطو بساع بساع \n هاذه معرفه : @"..data.username_.."",
-'ها عار مو جان معرفك \n شكو غيرته ل @'..data.username_..' ',
-'ها يول شو مغير معرفك بيش مشتري يول', 
+"رجع معرفك قديم احلا من هاذ ",
+"ها سرقت حد وغيرت معرفك؟ ",
+'ليش غيرت معرفك؟ ',
+'كم اشتريت معرفك جديد؟ ', 
 "منور معرف جديد :  "..data.username_.."",
 }
 send(msg.chat_id_, msg.id_,Text[math.random(#Text)])
@@ -2649,19 +2649,19 @@ if data.id_ ~= bot_id then
 local lIMChengPhoto = database:get(bot_id.."lIM:Cheng:Photo"..data.id_)
 if not data.profile_photo_ then 
 if lIMChengPhoto then 
-send(msg.chat_id_, msg.id_, "حذف كل صور ابن الحلو شكد غبي لعد😂🥺")
+send(msg.chat_id_, msg.id_, "حذف كل صور ابن الحلو كم غبي😂🥺")
 database:del(bot_id.."lIM:Cheng:Photo"..data.id_) 
 end
 end
 if data.profile_photo_.big_.persistent_id_ then 
 if lIMChengPhoto ~= data.profile_photo_.big_.persistent_id_ then 
 local Text = {
-  "شكو غيرت صورتك يلصاك",
-  "منور طالع حلو ع صوره جديده",
-  "ها يول شو غيرت صورتك😍😂",
-  "شكو غيرت صورتك شنو قطيت وحده جديده 😹😹🌚",
-  "شو غيرت صورتك شنو تعاركت ويه الحب ؟😹🌞",
-  "شكو غيرت الصوره شسالفه ؟؟ 🤔🌞",
+  "بخمط صورتك عجبتني",
+  "من وين جبت صورتك؟",
+  "رجع صورتك قديمه احلا",
+  "شو سرقت من حد وغيرت صورتك؟",
+  "لشو غيرت صورتك؟ تخانقت مع حب؟ ",
+  "ليش غيرت صورتك؟",
 }
 send(msg.chat_id_, msg.id_,Text[math.random(#Text)])
 end  
@@ -2671,23 +2671,16 @@ end
 end
 end,nil)   
 end
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
-Text = [[
-  ⦑ Welcome to Source ⦒ 
- 
-  ↬ .lIM TEAM  
- ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-  ↬ . [Channel](t.me/Source_lIM)  
-  
-  ↬ . [DEVELOPER](t.me/lIM_Admins)       
-   
-  ↬ . [Information](t.me/Source_lIM) 
-   
-  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉  
-  ↬ . [TWS ](t.me/rrrrybot)
-]]
-send(msg.chat_id_, msg.id_,Text)
-return false
+
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
+
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ 𝙻𝙸𝙼\n\n[-  𝙻𝙸𝙼 ᴄʜᴀɴɴᴇʟ  .](http://t.me/BOBBW)\n\n[-  ɪɴғᴏ sᴏᴜʀᴄᴇ .](http://t.me/pvv_v)\n\n[-  𝙻𝙸𝙼 ᴅᴇᴠᴇʟᴏᴘᴇʀ  .](http://t.me/KKKKK4)\n\n[-  ʙᴏᴛ 𝙻𝙸𝙼 .](http://t.me/rriebot)"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '✫: 𝙻𝙸𝙼 sᴏᴜʀᴄʀ .',url="t.me/BOBBW/567"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/RRRRDL&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
@@ -9759,7 +9752,7 @@ local team = '◈︙عدد الادمنيه : '..data.administrator_count_..
 send(msg.chat_id_, msg.id_, team) 
 end,nil)
 end,nil)
-end 
+end
 if text == 'اطردني' or text == 'طردني' then
 if not database:get(bot_id..'Cick:Me'..msg.chat_id_) then
 if Can_or_NotCan(msg.sender_user_id_, msg.chat_id_) == true then
@@ -10013,8 +10006,6 @@ rtpa = 'مشرف'
 elseif da.status_.ID == "ChatMemberStatusMember" then 
 rtpa = 'عضو'
 end
-local getcustomY = getcustom(msg,msg)
-local getbioY = getbio(msg.sender_user_id_)
 local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1) 
 local nummsggp = tonumber(msg.id_/2097152/0.5)
 local nspatfa = tonumber(Msguser / nummsggp * 100)
@@ -10050,8 +10041,6 @@ username = '@'..result.username_
 else
 username = 'مافيه '
 end
-get_id_text = get_id_text:gsub('#custom',getcustomY) 
-get_id_text = get_id_text:gsub('#bio',getbioY) 
 get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
 get_id_text = get_id_text:gsub('#id',iduser) 
 get_id_text = get_id_text:gsub('#username',username) 
@@ -10077,20 +10066,18 @@ else
 username = 'مافيه '
 end
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, team.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..'\n✬︙البايو ↫ '..getbioY..' ')
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, team.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..'\n')
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'[\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه  تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..']\n✬︙البايو ↫ '..getbioY..' ')
+send(msg.chat_id_, msg.id_,'[\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه  تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..']\n')
 else
-send(msg.chat_id_, msg.id_, '\n◈︙ الصوره ⪼ ما عندك صور في حسابك'..'[\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..']\n✬︙البايو ↫ '..getbioY..' ')
+send(msg.chat_id_, msg.id_, '\n◈︙ الصوره ⪼ ما عندك صور في حسابك'..'[\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..']\n')
 end 
 end
 end
 else
 local get_id_text = database:get(bot_id.."KLISH:ID"..msg.chat_id_)
 if get_id_text then
-get_id_text = get_id_text:gsub('#custom',getcustomY) 
-get_id_text = get_id_text:gsub('#bio',getbioY) 
 get_id_text = get_id_text:gsub('#rdphoto',rdphoto) 
 get_id_text = get_id_text:gsub('#id',iduser) 
 get_id_text = get_id_text:gsub('#username',username) 
@@ -10102,7 +10089,7 @@ get_id_text = get_id_text:gsub('#game',NUMPGAME)
 get_id_text = get_id_text:gsub('#photos',photps) 
 send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
 else
-send(msg.chat_id_, msg.id_,'[\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..']\n✬︙البايو ↫ '..getbioY..' ')
+send(msg.chat_id_, msg.id_,'[\n◈︙ ايديك ⪼ '..msg.sender_user_id_..'\n◈︙ معرفك ⪼ '..username..'\n◈︙ رتبتك ⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n◈︙ موقعك ⪼ '..rtpa..'\n◈︙ تفاعلك ⪼ '..Total_Msg(Msguser)..'\n◈︙ رسائلك ⪼ '..Msguser..'\n◈︙ نسبه تفاعلك ⪼ '..string.sub(nspatfa, 1,5)..' %\n◈︙ السحكات ⪼ '..edit..'\n◈︙ نقاطك ⪼ '..NUMPGAME..']\n')
 end
 end
 
