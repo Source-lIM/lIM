@@ -879,7 +879,7 @@ Chat_Type = 'GroupBot'
 end
 end
 if database:get(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == "الغاء" or text == "الغاء◈︙" then   
+if text == "الغاء" or text == "الغاء ◈" then   
 send(msg.chat_id_, msg.id_,"◈︙تم الغاء الاذاعه")
 database:del(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -930,26 +930,26 @@ end
 if DevlIMW(msg) then
 local bl = '◈︙اهلا عزيزي آلمـطـور\n◈︙آنت آلمـطـور آلآسـآسـي للبوت\n┉  ┉  ┉  ┉  ┉  ┉  ┉  ┉ء\n◈︙تسـتطـيع‌‏ آلتحگم باوامر البوت\n◈︙من خلاال الكيبورت خاص بك\n◈︙قناة سورس البوت [اضغط هنا](t.me/Source_lIM)'
 local keyboard = {
-{'رقم البناء◈︙','تحديث المتجر◈︙'},
-{'الاحصائيات◈︙','قناه تحديثات البوت◈︙'},
-{'تعطيل التواصل◈︙','تفعيل التواصل◈︙'},
+{'رقم البناء ◈','تحديث المتجر ◈'},
+{'الاحصائيات ◈','قناه تحديثات البوت ◈'},
+{'تعطيل التواصل ◈','تفعيل التواصل ◈'},
 {'تغير الاشتراك','تغير رساله الاشتراك'},
-{'حذف رساله الاشتراك◈︙','وضع قناة الاشتراك◈︙'},
-{'تفعيل الاشتراك الاجباري◈︙','تعطيل الاشتراك الاجباري◈︙'},
-{'الاشتراك الاجباري◈︙'},
-{'ضع اسم للبوت◈︙','المطورين◈︙','قائمه العام◈︙'},
-{'المشتركين◈︙','الكروبات◈︙'},
-{'ضع كليشه ستارت◈︙','حذف كليشه ستارت◈︙'},
-{'اذاعه◈︙','اذاعه خاص◈︙'},
-{'اذاعه بالتثبيت◈︙','قائمه الكتم العام◈︙'},
-{'اذاعه بالتوجيه◈︙','اذاعه بالتوجيه خاص◈︙'},
-{'تفعيل البوت الخدمي◈︙','تعطيل البوت الخدمي◈︙'},
-{'تنظيف الكروبات◈︙','تنظيف المشتركين◈︙'},
-{'جلب نسخه الاحتياطيه◈︙'},
-{'تحديث السورس◈︙','الاصدار◈︙'},
-{'معلومات السيرفر◈︙'},
-{'مطور السورس◈︙'},
-{'الغاء◈︙'},
+{'حذف رساله الاشتراك ◈','وضع قناة الاشتراك ◈'},
+{'تفعيل الاشتراك الاجباري ◈','تعطيل الاشتراك الاجباري ◈'},
+{'الاشتراك الاجباري ◈'},
+{'ضع اسم للبوت ◈','المطورين ◈','قائمه العام ◈'},
+{'المشتركين ◈','الكروبات ◈'},
+{'ضع كليشه ستارت ◈','حذف كليشه ستارت ◈'},
+{'اذاعه ◈','اذاعه خاص ◈'},
+{'اذاعه بالتثبيت ◈','قائمه الكتم العام ◈'},
+{'اذاعه بالتوجيه ◈','اذاعه بالتوجيه خاص ◈'},
+{'تفعيل البوت الخدمي ◈','تعطيل البوت الخدمي ◈'},
+{'تنظيف الكروبات ◈','تنظيف المشتركين ◈'},
+{'جلب نسخه الاحتياطيه ◈'},
+{'تحديث السورس ◈','الاصدار ◈'},
+{'معلومات السيرفر ◈'},
+{'مطور السورس ◈'},
+{'الغاء ◈'},
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
 else
@@ -1047,7 +1047,7 @@ end,nil)
 end,nil)
 end,nil)
 end 
-if text == 'تفعيل التواصل◈︙' and DevlIMW(msg) then  
+if text == 'تفعيل التواصل ◈' and DevlIMW(msg) then  
 if database:get(bot_id..'Tuasl:Bots') then
 database:del(bot_id..'Tuasl:Bots') 
 Text = '\n◈︙تم تفعيل التواصل ' 
@@ -1056,7 +1056,7 @@ Text = '\n◈︙ياطيب مفعل من قبل التواصل '
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تعطيل التواصل◈︙' and DevlIMW(msg) then  
+if text == 'تعطيل التواصل ◈' and DevlIMW(msg) then  
 if not database:get(bot_id..'Tuasl:Bots') then
 database:set(bot_id..'Tuasl:Bots',true) 
 Text = '\n◈︙ابشر عطلت التواصل' 
@@ -1065,7 +1065,7 @@ Text = '\n◈︙ياطيب معطل من قبل التواصل'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تفعيل البوت الخدمي◈︙' and DevlIMW(msg) then  
+if text == 'تفعيل البوت الخدمي ◈' and DevlIMW(msg) then  
 if database:get(bot_id..'Free:Bots') then
 database:del(bot_id..'Free:Bots') 
 Text = '\n◈︙تم تفعيل البوت الخدمي ' 
@@ -1074,7 +1074,7 @@ Text = '\n◈︙ياطيب مفعل من قبل البوت الخدمي '
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تعطيل البوت الخدمي◈︙' and DevlIMW(msg) then  
+if text == 'تعطيل البوت الخدمي ◈' and DevlIMW(msg) then  
 if not database:get(bot_id..'Free:Bots') then
 database:set(bot_id..'Free:Bots',true) 
 Text = '\n◈︙ابشر عطلت البوت الخدمي' 
@@ -1084,7 +1084,7 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text and database:get(bot_id..'Start:Bots') then
-if text == 'الغاء' or text == 'الغاء◈︙' then   
+if text == 'الغاء' or text == 'الغاء ◈' then   
 send(msg.chat_id_, msg.id_,'◈︙الغاء حفظ كليشه ستارت')
 database:del(bot_id..'Start:Bots') 
 return false
@@ -1094,16 +1094,16 @@ send(msg.chat_id_, msg.id_,'◈︙تم حفظت كليشه ستارت')
 database:del(bot_id..'Start:Bots') 
 return false
 end
-if text == 'ضع كليشه ستارت◈︙' and DevlIMW(msg) then 
+if text == 'ضع كليشه ستارت ◈' and DevlIMW(msg) then 
 database:set(bot_id..'Start:Bots',true) 
 send(msg.chat_id_, msg.id_,'◈︙ارسل لي الكليشه الان')
 return false
 end
-if text == 'حذف كليشه ستارت◈︙' and DevlIMW(msg) then 
+if text == 'حذف كليشه ستارت ◈' and DevlIMW(msg) then 
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,'◈︙تم حذفتت كليشه ستارت')
 end
-if text == 'معلومات السيرفر◈︙' and DevlIMW(msg) then 
+if text == 'معلومات السيرفر ◈' and DevlIMW(msg) then 
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
@@ -1119,13 +1119,13 @@ echo '*———————————~*\n◈︙{ مـده تـشغيـل ال
 ]]):read('*all'))  
 end
 
-if text == 'تحديث السورس◈︙' and DevlIMW(msg) then 
+if text == 'تحديث السورس ◈' and DevlIMW(msg) then 
 os.execute('rm -rf lIM.lua')
 os.execute('wget https://raw.githubusercontent.com/Source-lIM/lIM/master/lIM.lua')
 send(msg.chat_id_, msg.id_,'◈︙تم تحديث السورس \n◈︙لديك اخر اصدار لسورس ليم\n◈︙الاصدار » { 4v}')
 dofile('lIM.lua')  
 end
-if text == 'تحديث المتجر◈︙' and DevlIMW(msg) then 
+if text == 'تحديث المتجر ◈' and DevlIMW(msg) then 
   io.popen("mkdir File_Bot")
   io.popen("cd File_Bot && rm -rf ga.lua.1") 
   io.popen("cd File_Bot && rm -rf ga.lua.2") 
@@ -1135,49 +1135,49 @@ if text == 'تحديث المتجر◈︙' and DevlIMW(msg) then
   send(msg.chat_id_, msg.id_,'◈︙تم تحديث \n◈︙لديك اخر اصدار للمتجر')
   dofile('lIM.lua')  
   end
-if text == 'رقم البناء◈︙' and DevlIMW(msg) then 
+if text == 'رقم البناء ◈' and DevlIMW(msg) then 
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,'◈︙اهلاء عزيزي \n رقم البناء خاص بوتك {lua~{m7a29}')
 end
-if text == 'الاصدار◈︙' and DevlIMW(msg) then 
+if text == 'الاصدار ◈' and DevlIMW(msg) then 
   database:del(bot_id..'Srt:Bot') 
   send(msg.chat_id_, msg.id_,'◈︙اصدار سورس ليم \n◈︙الاصدار »{ 6.7v}')
   end
-  if text == 'مطور السورس◈︙' and DevlIMW(msg) then 
+  if text == 'مطور السورس ◈' and DevlIMW(msg) then 
     database:del(bot_id..'Srt:Bot') 
     send(msg.chat_id_, msg.id_,'◈︙تنويه : قبل لا تراسل المطور تاكد انو عندك شغله مهمه \n\n المطور - @lIM_Admins ')
     end
-if text == 'قناه تحديثات البوت◈︙' and DevlIMW(msg) then 
+if text == 'قناه تحديثات البوت ◈' and DevlIMW(msg) then 
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,'◈︙[تحديثات البوت](t.me/Source_lIM) \n◈︙[قناه السورس](t.me/Source_lIM)')
 end
-if text == "ضع اسم للبوت◈︙" and DevlIMW(msg) then  
+if text == "ضع اسم للبوت ◈" and DevlIMW(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"◈︙ارسل اليه الاسم الان ")
 return false
 end
-if text == 'الاحصائيات◈︙' and DevlIMW(msg) then 
+if text == 'الاحصائيات ◈' and DevlIMW(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = ' الاحصائيات ◈︙\n'..'◈︙عدد الكروبات » {'..Groups..'}'..'\n◈︙عدد المشتركين » {'..Users..'}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text == 'المشتركين◈︙' and DevlIMW(msg) then 
+if text == 'المشتركين ◈' and DevlIMW(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n◈︙المشتركين»{`'..Users..'`}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text == 'الكروبات◈︙' and DevlIMW(msg) then 
+if text == 'الكروبات ◈' and DevlIMW(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n◈︙الكروبات»{`'..Groups..'`}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text == ("المطورين◈︙") and DevlIMW(msg) then
+if text == ("المطورين ◈") and DevlIMW(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
 t = "\n◈︙قائمة المطورين \n↫ ┄┄┄┄┄┄┄┄┄┄┄┄ ↬\n"
 for k,v in pairs(list) do
@@ -1193,7 +1193,7 @@ t = "◈︙مافيه مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("قائمه العام◈︙") and DevlIMW(msg) then
+if text == ("قائمه العام ◈") and DevlIMW(msg) then
 local list = database:smembers(bot_id..'GBan:User')
 t = "\n◈︙قائمه المحظورين عام \n↫ ┄┄┄┄┄┄┄┄┄┄┄┄ ↬\n"
 for k,v in pairs(list) do
@@ -1210,7 +1210,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text == ("قائمه الكتم العام◈︙") and DevlIMW(msg) then
+if text == ("قائمه الكتم العام ◈") and DevlIMW(msg) then
 local list = database:smembers(bot_id..'Gmute:User')
 t = "\n◈︙قائمة المكتومين عام \n↫ ┄┄┄┄┄┄┄┄┄┄┄┄ ↬\n"
 for k,v in pairs(list) do
@@ -1227,35 +1227,35 @@ end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text=="اذاعه خاص◈︙" and msg.reply_to_message_id_ == 0 and DevlIMW(msg) then 
+if text=="اذاعه خاص ◈" and msg.reply_to_message_id_ == 0 and DevlIMW(msg) then 
 database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"◈︙ارسل الان اذاعتك؟ \n◈︙للخروج ارسل الغاء ")
 return false
 end 
-if text=="اذاعه◈︙" and msg.reply_to_message_id_ == 0 and DevlIMW(msg) then 
+if text=="اذاعه ◈" and msg.reply_to_message_id_ == 0 and DevlIMW(msg) then 
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"◈︙ارسل الان اذاعتك؟ \n◈︙للخروج ارسل الغاء ")
 return false
 end  
-if text=="اذاعه بالتثبيت◈︙" and msg.reply_to_message_id_ == 0 and DevlIMW(msg) then 
+if text=="اذاعه بالتثبيت ◈" and msg.reply_to_message_id_ == 0 and DevlIMW(msg) then 
 database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"◈︙ارسل الان اذاعتك؟ \n◈︙للخروج ارسل الغاء ")
 return false
 end 
-if text=="اذاعه بالتوجيه◈︙" and msg.reply_to_message_id_ == 0  and DevlIMW(msg) then 
+if text=="اذاعه بالتوجيه ◈" and msg.reply_to_message_id_ == 0  and DevlIMW(msg) then 
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"◈︙ارسل لي التوجيه الان")
 return false
 end 
-if text=="اذاعه بالتوجيه خاص◈︙" and msg.reply_to_message_id_ == 0  and DevlIMW(msg) then 
+if text=="اذاعه بالتوجيه خاص ◈" and msg.reply_to_message_id_ == 0  and DevlIMW(msg) then 
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_,"◈︙ارسل لي التوجيه الان")
 return false
 end 
-if text == 'جلب نسخه الاحتياطيه◈︙' and DevlIMW(msg) then 
+if text == 'جلب نسخه الاحتياطيه ◈' and DevlIMW(msg) then 
 GetFile_Bot(msg)
 end
-if text == "تنظيف المشتركين◈︙" and DevlIMW(msg) then 
+if text == "تنظيف المشتركين ◈" and DevlIMW(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -1291,7 +1291,7 @@ end,nil)
 end
 return false
 end
-if text == "تنظيف الكروبات◈︙" and DevlIMW(msg) then 
+if text == "تنظيف الكروبات ◈" and DevlIMW(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -1465,7 +1465,7 @@ end,nil)
 end
 end
 if database:get(bot_id..'Set:Name:Bot'..msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء◈︙' then   
+if text == 'الغاء' or text == 'الغاء ◈' then   
 send(msg.chat_id_, msg.id_,"◈︙تم الغاء حفظ اسم البوت")
 database:del(bot_id..'Set:Name:Bot'..msg.sender_user_id_) 
 return false  
@@ -1476,7 +1476,7 @@ send(msg.chat_id_, msg.id_, "◈︙تم حفظت الاسم")
 return false
 end 
 if database:get(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء◈︙' then   
+if text == 'الغاء' or text == 'الغاء ◈' then   
 send(msg.chat_id_, msg.id_,"◈︙تم الغاء الاذاعه للخاص")
 database:del(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -1509,7 +1509,7 @@ database:del(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
 end
 
 if database:get(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء◈︙' then   
+if text == 'الغاء' or text == 'الغاء ◈' then   
 send(msg.chat_id_, msg.id_,"◈︙تم الغاء الاذاعه")
 database:del(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
@@ -1542,7 +1542,7 @@ database:del(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_i
 end
 
 if database:get(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء◈︙' then   
+if text == 'الغاء' or text == 'الغاء ◈' then   
 send(msg.chat_id_, msg.id_,"◈︙تم الغاء الاذاعه")
 database:del(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
@@ -1562,7 +1562,7 @@ database:del(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_
 end 
 end
 if database:get(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
-if text == 'الغاء' or text == 'الغاء◈︙' then   
+if text == 'الغاء' or text == 'الغاء ◈' then   
 send(msg.chat_id_, msg.id_,"◈︙تم الغاء الاذاعه")
 database:del(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
@@ -1593,7 +1593,7 @@ ID = "SearchPublicChat",
 username_ = username  
 },function(arg,data) 
 if data and data.message_ and data.message_ == "USERNAME_NOT_OCCUPIED" then 
-send(msg.chat_id_, msg.id_, '◈︙المعرف مافيه فيه قناة')
+send(msg.chat_id_, msg.id_, '◈︙المعرف خطأ مافيه قناه')
 return false  end
 if data and data.type_ and data.type_.ID and data.type_.ID == 'PrivateChatInfo' then
 send(msg.chat_id_, msg.id_, '◈︙عذا لا يمكنك وضع معرف حسابات في الاشتراك ')
@@ -2405,17 +2405,17 @@ database:setex(bot_id.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id
 send(msg.chat_id_, msg.id_, '◈︙حسنآ ارسل لي النص الذي تريده')
 return false  
 end
-if text == "حذف رساله الاشتراك◈︙" and DevlIMW(msg) then  
+if text == "حذف رساله الاشتراك ◈" and DevlIMW(msg) then  
 database:del(bot_id..'text:ch:user')
 send(msg.chat_id_, msg.id_, "◈︙تم مسحت رساله الاشتراك ")
 return false  
 end
-if text and text:match("^وضع قناة الاشتراك◈︙$") and DevlIMW(msg) then  
+if text and text:match("^وضع قناة الاشتراك ◈$") and DevlIMW(msg) then  
 database:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, '◈︙حسنآ ارسل لي معرف القناة')
 return false  
 end
-if text == "تفعيل الاشتراك الاجباري◈︙" and DevlIMW(msg) then  
+if text == "تفعيل الاشتراك الاجباري ◈" and DevlIMW(msg) then  
 if database:get(bot_id..'add:ch:id') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_,"◈︙الاشتراك الاجباري مفعل \n◈︙على القناة » ["..addchusername.."]")
@@ -2425,13 +2425,13 @@ send(msg.chat_id_, msg.id_,"◈︙اهلا عزيزي المطور \n◈︙ار�
 end
 return false  
 end
-if text == "تعطيل الاشتراك الاجباري◈︙" and DevlIMW(msg) then  
+if text == "تعطيل الاشتراك الاجباري ◈" and DevlIMW(msg) then  
 database:del(bot_id..'add:ch:id')
 database:del(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, "◈︙ابشر عطلت الاشتراك الاجباري ")
 return false  
 end
-if text == "الاشتراك الاجباري◈︙" and DevlIMW(msg) then  
+if text == "الاشتراك الاجباري ◈" and DevlIMW(msg) then  
 if database:get(bot_id..'add:ch:username') then
 local addchusername = database:get(bot_id..'add:ch:username')
 send(msg.chat_id_, msg.id_, "◈︙تم تفعيل الاشتراك الاجباري \n◈︙على القناة » ["..addchusername.."]")
@@ -8838,11 +8838,11 @@ if text == ""..(database:get(bot_id..'Name:Bot') or 'ليم').."" then
 Namebot = (database:get(bot_id..'Name:Bot') or 'ليم')
 local lIM_Msg = {
 'عمغي 🥺💕.',
-'الله يرزقك حياة غير ليم',
+'الله يرزقك حياة غير '..Namebot..'',
 'لبيه.',
 'عيونها',
-'عيون ليم',
-'الله ياخذ ليم.',
+'عيون '..Namebot..'',
+'الله ياخذ '..Namebot..'.',
 'كول حبيبي ؟ اني '..Namebot..'',
 'قول شعندك',
 'عمري فداك '..Namebot..' كول حب'
@@ -9448,7 +9448,7 @@ return false
 end
 if text == 'بوت' or text == 'شسمك' or text == 'شوسمك' or text == 'شو اسمك' or text == 'شنو اسمك' or text == 'شنواسمك' or text == 'شنوسمك' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'ليم')
-send(msg.chat_id_, msg.id_,'اسمي * ['..Namebot..'] *')
+send(msg.chat_id_, msg.id_,'اسمي * '..Namebot..' *')
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
