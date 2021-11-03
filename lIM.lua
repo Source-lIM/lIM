@@ -9759,7 +9759,107 @@ local team = '◈︙عدد الادمنيه : '..data.administrator_count_..
 send(msg.chat_id_, msg.id_, team) 
 end,nil)
 end,nil)
-end 
+end
+if text then   
+if database:get(bot_id..'Set:array'..msg.sender_user_id_..':'..msg.chat_id_) == 'true1' then
+local test = database:get(bot_id..'Text:array'..msg.sender_user_id_..':'..msg.chat_id_..'')
+text = text:gsub('"','') 
+text = text:gsub("'",'') 
+text = text:gsub('`','') 
+text = text:gsub('*','') 
+database:sadd(bot_id.."Add:Rd:array:Text"..test..msg.chat_id_,text)  
+_key = {
+{{text="اضغط هنا لانهاء الاضافه",callback_data="EndAddarray"..msg.sender_user_id_}},
+}
+send_inlin_key(msg.chat_id_,' *✬︙تم حفظ الرد يمكنك ارسال اخر او اكمال العمليه من خلال الزر اسفل ✅*',_key,msg.id_)
+return false  
+end
+end    
+if text and text:match("^(.*)$") then
+if database:get(bot_id.."Set:array:Ssd"..msg.sender_user_id_..":"..msg.chat_id_) == 'dttd' then
+database:del(bot_id.."Set:array:Ssd"..msg.sender_user_id_..":"..msg.chat_id_)
+gery = database:get(bot_id.."Set:array:addpu"..msg.sender_user_id_..":"..msg.chat_id_)
+if not database:sismember(bot_id.."Add:Rd:array:Text"..gery..msg.chat_id_,text) then
+send(msg.chat_id_, msg.id_,' *✬︙لا يوجد رد متعدد * ')
+return false
+end
+send(msg.chat_id_, msg.id_,' *✬︙تم حذفه بنجاح .* ')
+database:srem(bot_id.."Add:Rd:array:Text"..gery..msg.chat_id_,text)
+end
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id.."Set:array:Ssd"..msg.sender_user_id_..":"..msg.chat_id_) == 'delrd' then
+database:del(bot_id.."Set:array:Ssd"..msg.sender_user_id_..":"..msg.chat_id_)
+if not database:sismember(bot_id..'List:array'..msg.chat_id_,text) then
+send(msg.chat_id_, msg.id_,' *✬︙لا يوجد رد متعدد * ')
+return false
+end
+send(msg.chat_id_, msg.id_,' *✬︙قم بارسال الرد الذي تريد حذفه منه* ')
+database:set(bot_id.."Set:array:addpu"..msg.sender_user_id_..":"..msg.chat_id_,text)
+database:set(bot_id.."Set:array:Ssd"..msg.sender_user_id_..":"..msg.chat_id_,"dttd")
+return false
+end
+end
+if text == "حذف رد من متعدد" and Manager(msg) then
+send(msg.chat_id_, msg.id_,"*✬︙ارسل الكلمه الرد الاصليه*")
+database:set(bot_id.."Set:array:Ssd"..msg.sender_user_id_..":"..msg.chat_id_,"delrd")
+return false 
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id.."Set:array"..msg.sender_user_id_..":"..msg.chat_id_) == 'true' then
+send(msg.chat_id_, msg.id_,' *✬︙ارسل الرد الذي تريد اضافته*')
+database:set(bot_id..'Set:array'..msg.sender_user_id_..':'..msg.chat_id_,'true1')
+database:set(bot_id..'Text:array'..msg.sender_user_id_..':'..msg.chat_id_, text)
+database:del(bot_id.."Add:Rd:array:Text"..text..msg.chat_id_)   
+database:sadd(bot_id..'List:array'..msg.chat_id_..'', text)
+return false
+end
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id.."Set:array:rd"..msg.sender_user_id_..":"..msg.chat_id_) == 'delrd' then
+database:del(bot_id.."Set:array:rd"..msg.sender_user_id_..":"..msg.chat_id_)
+send(msg.chat_id_, msg.id_,' *✬︙تم ازالة الرد المتعدد بنجاح* ')
+database:del(bot_id.."Add:Rd:array:Text"..text..msg.chat_id_)
+database:srem(bot_id..'List:array'..msg.chat_id_, text)
+return false
+end
+end
+if text == "حذف رد متعدد" and Manager(msg) then
+send(msg.chat_id_, msg.id_,"*✬︙ارسل الكلمه التي تريد حذفها*")
+database:set(bot_id.."Set:array:rd"..msg.sender_user_id_..":"..msg.chat_id_,"delrd")
+return false 
+end
+if text then
+if  database:sismember(bot_id..'List:array'..msg.chat_id_,text) then
+local list = database:smembers(bot_id.."Add:Rd:array:Text"..text..msg.chat_id_)
+quschen = list[math.random(#list)]
+send(msg.chat_id_, msg.id_,quschen)
+end
+end
+if text == ("الردود المتعدده") and Manager(msg) then
+local list = database:smembers(bot_id..'List:array'..msg.chat_id_..'')
+text = " ✬︙قائمه الردود المتعدده \n*•━━━━━━ ʙᴏʏ ━━━━━━━•*\n"
+for k,v in pairs(list) do
+text = text..""..k..">> ("..v..") » {رساله}\n"
+end
+if #list == 0 then
+text = " ✬︙لا يوجد ردود متعدده"
+end
+send(msg.chat_id_, msg.id_,'['..text..']')
+end
+if text == ("مسح الردود المتعدده") and BasicConstructor(msg) and GetChannelMember(msg) then   
+local list = database:smembers(bot_id..'List:array'..msg.chat_id_)
+for k,v in pairs(list) do
+database:del(bot_id.."Add:Rd:array:Text"..v..msg.chat_id_)   
+database:del(bot_id..'List:array'..msg.chat_id_)
+end
+send(msg.chat_id_, msg.id_," *✬︙تم مسح الردود المتعدده*")
+end
+if text == "اضف رد متعدد" and Manager(msg) and GetChannelMember(msg) then   
+send(msg.chat_id_, msg.id_,"*✬︙ارسل الكلمه التي تريد اضافتها*")
+database:set(bot_id.."Set:array"..msg.sender_user_id_..":"..msg.chat_id_,true)
+return false 
+end
 if text == 'اطردني' or text == 'طردني' then
 if not database:get(bot_id..'Cick:Me'..msg.chat_id_) then
 if Can_or_NotCan(msg.sender_user_id_, msg.chat_id_) == true then
