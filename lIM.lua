@@ -9855,7 +9855,7 @@ database:del(bot_id..'List:array'..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_," *✬︙تم مسح الردود المتعدده*")
 end
-if text == "اضف رد متعدد" and Manager(msg) and GetChannelMember(msg) then   
+if text == "اضف رد متعدد" and Manager(msg) then
 send(msg.chat_id_, msg.id_,"*✬︙ارسل الكلمه التي تريد اضافتها*")
 database:set(bot_id.."Set:array"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
